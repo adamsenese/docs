@@ -125,17 +125,20 @@
   },
   "fonts": {
     "family": "DM Sans",
-    "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap\" rel=\"stylesheet",
+    "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
     "heading": {
-      "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap\" rel=\"stylesheet",
+      "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
       "family": "DM Sans",
       "format": "woff"
     },
     "body": {
       "family": "DM Sans",
-      "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap\" rel=\"stylesheet",
+      "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
       "format": "woff"
     },
     "format": "woff"
+  },
+  "appearance": {
+    "default": "dark"
   }
 }
