@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "linden",
+  "theme": "maple",
   "name": "Hermes Documentation",
   "colors": {
     "primary": "#BEFF00",
