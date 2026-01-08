@@ -122,5 +122,20 @@
   "description": "Learn how to get the most out of Hermes",
   "background": {
     "decoration": "grid"
+  },
+  "fonts": {
+    "family": "DM Sans",
+    "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap\" rel=\"stylesheet",
+    "heading": {
+      "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap\" rel=\"stylesheet",
+      "family": "DM Sans",
+      "format": "woff"
+    },
+    "body": {
+      "family": "DM Sans",
+      "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap\" rel=\"stylesheet",
+      "format": "woff"
+    },
+    "format": "woff"
   }
 }
