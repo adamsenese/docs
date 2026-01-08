@@ -3,7 +3,7 @@
   "theme": "almond",
   "name": "Hermes Documentation",
   "colors": {
-    "primary": "#BEFF00",
+    "primary": "#387961",
     "light": "#BEFF00",
     "dark": "#387961"
   },
@@ -91,7 +91,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://hermesvoice.com/support"
       }
     ],
     "primary": {
@@ -114,9 +114,10 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
+      "x": "https://x.com/hermesvoice",
       "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "linkedin": "https://linkedin.com/company/relativeindustries",
+      "instagram": "https://instagram.com/hermesvoice_"
     }
   },
   "description": "Learn how to get the most out of Hermes",
@@ -129,14 +130,14 @@
     "heading": {
       "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
       "family": "DM Sans",
-      "format": "woff"
+      "format": "woff2"
     },
     "body": {
       "family": "DM Sans",
       "source": "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
-      "format": "woff"
+      "format": "woff2"
     },
-    "format": "woff"
+    "format": "woff2"
   },
   "appearance": {
     "default": "dark"
