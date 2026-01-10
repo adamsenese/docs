@@ -1,0 +1,171 @@
+---
+title: "Web Search"
+description: "Search the web with your voice."
+---
+
+## What it does
+
+Web Search opens a search engine with your query. Say "search google for pizza", and Google opens with "pizza" as the search.
+
+## Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Search Engine** | Google | Google, DuckDuckGo, Bing, or Custom |
+| **Browser** | Default | Which browser to open |
+| **Query Handling** | Passthrough | How to process the query |
+| **Open in New Tab** | On | Open in new tab vs current |
+| **Focus Browser** | On | Bring browser to foreground |
+
+---
+
+## Search engines
+
+### Built-in engines
+
+| Engine | URL |
+|--------|-----|
+| Google | `google.com/search?q={query}` |
+| DuckDuckGo | `duckduckgo.com/?q={query}` |
+| Bing | `bing.com/search?q={query}` |
+
+### Custom search engines
+
+Create searches for any website by entering a custom URL with `{query}` as the placeholder.
+
+| Site | Custom URL |
+|------|------------|
+| YouTube | `youtube.com/results?search_query={query}` |
+| Amazon | `amazon.com/s?k={query}` |
+| Stack Overflow | `stackoverflow.com/search?q={query}` |
+| Wikipedia | `en.wikipedia.org/wiki/Special:Search?search={query}` |
+| Reddit | `reddit.com/search/?q={query}` |
+| GitHub | `github.com/search?q={query}` |
+| Twitter/X | `x.com/search?q={query}` |
+
+---
+
+## Query handling modes
+
+### Passthrough (default)
+
+Uses your speech directly as the query.
+
+```
+Speech: "search youtube for coding tutorials"
+Query: "coding tutorials"
+```
+
+### Template
+
+Apply pretext or posttext to modify the query.
+
+```
+Pretext: "site:reddit.com "
+Speech: "search reddit for mechanical keyboards"
+Query: "site:reddit.com mechanical keyboards"
+```
+
+### Direct URL
+
+Opens a URL without a query. Useful for opening specific pages.
+
+```
+Trigger: "open github"
+URL: "github.com"
+(No query needed)
+```
+
+---
+
+## Browser options
+
+| Browser | Description |
+|---------|-------------|
+| Default | Your system default browser |
+| Safari | Apple Safari |
+| Chrome | Google Chrome |
+| Firefox | Mozilla Firefox |
+
+---
+
+## Examples
+
+### Basic web search
+
+**Trigger**: "search google for"
+**Mode**: Prefix
+**Engine**: Google
+
+Say: "search google for best restaurants nearby"
+Opens: Google with "best restaurants nearby"
+
+### Site-specific search
+
+**Trigger**: "search youtube for"
+**Mode**: Prefix
+**Engine**: Custom (`youtube.com/results?search_query={query}`)
+
+Say: "search youtube for swift tutorials"
+Opens: YouTube with "swift tutorials"
+
+### Reddit with site filter
+
+**Trigger**: "search reddit for"
+**Mode**: Prefix
+**Engine**: Google
+**Pretext**: `site:reddit.com `
+
+Say: "search reddit for mechanical keyboards"
+Opens: Google with "site:reddit.com mechanical keyboards"
+
+---
+
+## Creating a web search trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase (e.g., "search google for").
+  </Step>
+  <Step title="Choose Prefix matching">
+    Select **Prefix** so your query comes after the phrase.
+  </Step>
+  <Step title="Select Web Search">
+    Choose **Web Search** as the action type.
+  </Step>
+  <Step title="Configure search">
+    - Pick your search engine
+    - Choose your browser
+    - Set query handling if needed
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Tips
+
+- **Use prefix matching** for searches with queries
+- **Use exact matching** for opening specific sites (like "open github")
+- **Create multiple search triggers** for different engines (Google, YouTube, Amazon)
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Variables" icon="code" href="/triggers/variables">
+    Dynamic values in your queries.
+  </Card>
+  <Card title="App Launcher" icon="rocket" href="/triggers/types/app-launcher">
+    Open apps instead of websites.
+  </Card>
+</CardGroup>

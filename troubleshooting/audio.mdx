@@ -1,0 +1,197 @@
+---
+title: "Audio Issues"
+description: "Fixing microphone and audio problems with Hermes."
+---
+
+## Microphone not detected
+
+### Symptoms
+- No audio input shown in Hermes
+- "No microphone found" message
+- Audio meter shows no activity
+
+### Fixes
+
+**Check system audio settings:**
+1. Go to **System Settings → Sound → Input**
+2. Make sure a microphone is selected
+3. Speak and verify the input level meter moves
+
+**Check Hermes microphone settings:**
+1. Go to **Settings → Dictation → Microphone**
+2. Try setting to **Auto** first
+3. If Auto doesn't work, manually select your microphone
+
+**Check physical connection:**
+- USB microphones: Try a different port
+- Bluetooth: Make sure it's connected and selected
+- Built-in: Make sure nothing is covering the mic
+
+---
+
+## Wrong microphone being used
+
+### Symptoms
+- Hermes uses built-in mic instead of external
+- Audio quality is poor
+- Picks up background noise
+
+### Fixes
+
+**Set preferred microphone:**
+1. Go to **Settings → Dictation → Microphone**
+2. Change **Preferred Mode** to **Manual**
+3. Select your preferred microphone
+
+**Microphone modes:**
+| Mode | Behavior |
+|------|----------|
+| Auto | Hermes picks the best available |
+| AirPods | Prefer AirPods when connected |
+| Headphones | Prefer any connected headphones |
+| Built-in | Always use Mac's built-in mic |
+| Manual | Use the specific mic you select |
+
+---
+
+## Audio is too quiet
+
+### Symptoms
+- Hermes can't hear you
+- Only picks up when you speak loudly
+- Misses words frequently
+
+### Fixes
+
+**Increase input volume:**
+1. Go to **System Settings → Sound → Input**
+2. Increase the **Input volume** slider
+3. Speak at normal volume and check the level meter
+
+**Adjust voice activity threshold:**
+1. Go to **Settings → Dictation**
+2. Lower the **Voice Activity Threshold** (closer to 0)
+3. This makes Hermes more sensitive to quieter speech
+
+**Speak closer to microphone:**
+- Position mic closer to your mouth
+- External mics typically work better
+
+---
+
+## Audio is too sensitive
+
+### Symptoms
+- Picks up background noise
+- Triggers on non-speech sounds
+- Records when you're not speaking
+
+### Fixes
+
+**Adjust voice activity threshold:**
+1. Go to **Settings → Dictation**
+2. Raise the **Voice Activity Threshold** (closer to 1)
+3. This makes Hermes less sensitive, requiring louder speech
+
+**Use a directional microphone:**
+- Cardioid mics pick up sound from one direction
+- Reduces background noise
+
+**Reduce ambient noise:**
+- Close windows
+- Turn off fans/AC if possible
+- Use noise-canceling microphones
+
+---
+
+## Bluetooth microphone issues
+
+### Symptoms
+- AirPods or Bluetooth headset not working
+- Audio cuts out
+- Delay in transcription
+
+### Fixes
+
+**Check connection:**
+1. Go to **System Settings → Bluetooth**
+2. Make sure your device is connected
+3. Try disconnecting and reconnecting
+
+**Select as input:**
+1. Go to **System Settings → Sound → Input**
+2. Select your Bluetooth device as input
+
+**Configure Hermes:**
+1. Go to **Settings → Dictation → Microphone**
+2. Set Preferred Mode to **AirPods** or **Headphones**
+
+**Bluetooth audio quirks:**
+- Bluetooth may add slight latency
+- Audio quality may be lower than wired
+- Some devices have separate call vs media modes
+
+---
+
+## Audio feedback or echo
+
+### Symptoms
+- Hermes picks up its own output
+- Echo in transcription
+- Looping audio
+
+### Fixes
+
+**Mute speakers during dictation:**
+1. Go to **Settings → Dictation**
+2. Enable **Mute Speakers During Dictation**
+
+**Use headphones:**
+- Prevents mic from picking up speaker output
+- Better quality overall
+
+**Reduce speaker volume:**
+- Lower system volume when dictating
+- Use headphones for audio playback
+
+---
+
+## Recording cuts off too early
+
+### Symptoms
+- Dictation ends before you finish speaking
+- Only captures first few words
+- Stops during pauses
+
+### Fixes
+
+**Adjust silence detection:**
+1. Go to **Settings → Dictation**
+2. Disable **Auto-stop after silence** if you need long pauses
+3. Or use **double-tap mode** for hands-free long dictation
+
+**Check max duration:**
+1. Go to **Settings → Dictation**
+2. Increase **Max Recording Duration** if needed
+
+**Use double-tap:**
+- Double-tap your hotkey for hands-free mode
+- Tap once to stop instead of releasing
+
+---
+
+## Still having audio issues?
+
+1. **Test in other apps** — Try Voice Memos or QuickTime to verify mic works
+2. **Try a different microphone** — Rule out hardware issues
+3. **Restart Hermes** — Clears audio session state
+4. **Restart your Mac** — Resets system audio
+
+<CardGroup cols={2}>
+  <Card title="Permissions issues" icon="lock" href="/troubleshooting/permissions">
+    Check microphone permission.
+  </Card>
+  <Card title="Common issues" icon="circle-exclamation" href="/troubleshooting/common-issues">
+    Other common problems.
+  </Card>
+</CardGroup>

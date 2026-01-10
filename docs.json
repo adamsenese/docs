@@ -28,55 +28,80 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "setup/permissions"
+            ]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/dictation",
+              "features/hotkeys",
+              "features/ai-formatting",
+              "features/hermes-reply",
+              "features/hermes-edit",
+              "features/notes"
             ]
           },
           {
             "group": "Customization",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "customization/formatting-modes",
+              "customization/dictionary"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Settings",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "settings/overview",
+              "settings/dictation",
+              "settings/ai-formatting",
+              "settings/interface",
+              "settings/privacy"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Triggers",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+              "triggers/overview",
+              "triggers/creating-triggers",
+              "triggers/matching-modes",
+              {
+                "group": "Trigger Types",
+                "pages": [
+                  "triggers/types/text-expansion",
+                  "triggers/types/web-search",
+                  "triggers/types/app-launcher",
+                  "triggers/types/window-layout",
+                  "triggers/types/window-actions",
+                  "triggers/types/keyboard-shortcuts",
+                  "triggers/types/terminal",
+                  "triggers/types/siri-shortcuts",
+                  "triggers/types/ai-calls",
+                  "triggers/types/text-formatting",
+                  "triggers/types/compound-actions"
+                ]
+              },
+              "triggers/variables",
+              "triggers/defaults"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Account",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "account/plans",
+              "account/billing"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/common-issues",
+              "troubleshooting/permissions",
+              "troubleshooting/audio"
             ]
           }
         ]
@@ -96,26 +121,25 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Download",
+      "href": "https://hermesvoice.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
       "x": "https://x.com/hermesvoice",
-      "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/relativeindustries",
       "instagram": "https://instagram.com/hermesvoice_"
     }

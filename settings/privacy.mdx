@@ -1,0 +1,110 @@
+---
+title: "Privacy Settings"
+description: "Control how Hermes handles your data, syncing, and analytics."
+---
+
+## Privacy Mode
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Privacy Mode** | Off | Master switch that blocks all cloud features |
+
+<Warning>
+When Privacy Mode is on, Cloud Sync, Analytics, and Crash Reports are all disabled. Your data stays entirely on your Mac.
+</Warning>
+
+Use Privacy Mode if you:
+- Work with sensitive information
+- Prefer complete local control
+- Don't need cross-device syncing
+
+---
+
+## Individual controls
+
+These settings are available when Privacy Mode is off:
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Cloud Sync** | On | Sync settings, dictionary, and notes across devices |
+| **Analytics** | On | Send anonymous usage data to improve Hermes |
+| **Crash Reports** | On | Send crash data to help fix bugs |
+
+### Cloud Sync
+
+When enabled:
+- Settings sync across your devices
+- Dictionary entries appear everywhere
+- Notes are available on all your Macs
+
+When disabled:
+- Everything stays on this Mac only
+- Changes won't appear on other devices
+
+### Analytics
+
+Anonymous data about how you use Hermes:
+- Which features you use most
+- Performance metrics
+- Error rates
+
+This helps us improve Hermes. No personal data or dictation content is included.
+
+### Crash Reports
+
+When Hermes crashes, a report can be sent automatically. This includes:
+- What happened before the crash
+- System information
+- Error logs
+
+No dictation content is included.
+
+---
+
+## History retention
+
+| Setting | Default | Options |
+|---------|---------|---------|
+| **Auto-delete History** | Never | Never, 7 days, 30 days, 90 days |
+
+Dictation history is stored locally. You can set it to automatically delete after a period of time.
+
+<Note>
+This only affects dictation history, not Notes. Notes are kept until you manually delete them.
+</Note>
+
+---
+
+## What data stays local
+
+Regardless of your settings, these always stay on your Mac:
+
+- **Audio recordings** — Never transmitted, processed locally
+- **Screenshots** (when Vision is used) — Analyzed and immediately discarded
+- **Dictation content** — Only transmitted for AI formatting (not stored)
+
+---
+
+## Privacy Mode effects
+
+| Feature | Privacy Mode Off | Privacy Mode On |
+|---------|------------------|-----------------|
+| Cloud Sync | Available | Disabled |
+| Analytics | Available | Disabled |
+| Crash Reports | Available | Disabled |
+| AI Formatting | Cloud AI | Local AI only |
+| Vision | Available | Disabled |
+| Dictation | Normal | Normal |
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Settings Overview" icon="gear" href="/settings/overview">
+    How settings relate to each other.
+  </Card>
+  <Card title="AI Formatting Settings" icon="wand-magic-sparkles" href="/settings/ai-formatting">
+    Vision and Local AI options.
+  </Card>
+</CardGroup>

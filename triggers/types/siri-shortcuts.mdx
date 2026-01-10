@@ -1,0 +1,114 @@
+---
+title: "Siri Shortcuts"
+description: "Run Shortcuts app workflows with your voice."
+---
+
+## What it does
+
+Siri Shortcuts runs workflows from Apple's Shortcuts app. If you've built automations in Shortcuts, you can trigger them with Hermes.
+
+## Configuration
+
+| Setting | Description |
+|---------|-------------|
+| **Shortcut Name** | The exact name of your shortcut |
+
+---
+
+## How it works
+
+1. Create a shortcut in the Shortcuts app
+2. Create a Hermes trigger with the shortcut name
+3. Say your trigger phrase
+4. The shortcut runs
+
+---
+
+## Example shortcuts
+
+### Home automation
+
+**Shortcut name**: "Turn Off Lights"
+**Trigger phrase**: "lights off"
+**What it does**: Controls HomeKit lights
+
+### Messaging
+
+**Shortcut name**: "Text Wife"
+**Trigger phrase**: "text wife"
+**What it does**: Sends a predefined message
+
+### Media control
+
+**Shortcut name**: "Workout Playlist"
+**Trigger phrase**: "play workout music"
+**What it does**: Plays a specific playlist
+
+### System actions
+
+**Shortcut name**: "Do Not Disturb"
+**Trigger phrase**: "focus mode"
+**What it does**: Enables Do Not Disturb
+
+---
+
+## Creating a Siri Shortcuts trigger
+
+<Steps>
+  <Step title="Create your shortcut">
+    Open the **Shortcuts** app and create (or find) your shortcut.
+    Note the exact name.
+  </Step>
+  <Step title="Open Triggers in Hermes">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase.
+  </Step>
+  <Step title="Select Siri Shortcuts">
+    Choose **Siri Shortcuts** as the action type.
+  </Step>
+  <Step title="Enter shortcut name">
+    Type the exact name of your shortcut.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Tips
+
+- **Shortcut name must be exact** — Capitalization and spacing matter
+- **Test shortcuts first** — Make sure they work in the Shortcuts app
+- **Keep shortcuts simple** — Complex shortcuts may timeout
+- **Use for Apple integrations** — HomeKit, Messages, Music work great
+
+---
+
+## Use cases
+
+| Category | Examples |
+|----------|----------|
+| Smart Home | Lights, thermostat, locks, scenes |
+| Communication | Send messages, make calls |
+| Media | Play music, podcasts, control volume |
+| Productivity | Create reminders, calendar events |
+| System | Focus modes, settings toggles |
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Terminal Commands" icon="terminal" href="/triggers/types/terminal">
+    Run shell commands instead.
+  </Card>
+  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
+    Chain with other actions.
+  </Card>
+</CardGroup>

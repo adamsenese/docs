@@ -1,0 +1,129 @@
+---
+title: "Window Layout"
+description: "Snap windows to predefined positions with your voice."
+---
+
+## What it does
+
+Window Layout instantly positions your current window to a screen region. Say "window left" and your window snaps to the left half of the screen.
+
+## Available layouts
+
+| Layout | Position | Size |
+|--------|----------|------|
+| **Left Half** | Left edge | 50% width, 100% height |
+| **Right Half** | Right edge | 50% width, 100% height |
+| **Top Half** | Top edge | 100% width, 50% height |
+| **Bottom Half** | Bottom edge | 100% width, 50% height |
+| **Top Left Quarter** | Top-left corner | 50% × 50% |
+| **Top Right Quarter** | Top-right corner | 50% × 50% |
+| **Bottom Left Quarter** | Bottom-left corner | 50% × 50% |
+| **Bottom Right Quarter** | Bottom-right corner | 50% × 50% |
+| **Center** | Screen center | Keeps current size |
+| **Maximize** | Fill screen | Respects menu bar |
+| **Fullscreen** | True fullscreen | macOS fullscreen mode |
+
+---
+
+## Visual guide
+
+### Halves
+
+```
+┌─────────┬─────────┐    ┌───────────────────┐
+│         │         │    │     Top Half      │
+│  Left   │  Right  │    ├───────────────────┤
+│  Half   │  Half   │    │    Bottom Half    │
+│         │         │    │                   │
+└─────────┴─────────┘    └───────────────────┘
+```
+
+### Quarters
+
+```
+┌─────────┬─────────┐
+│ Top     │ Top     │
+│ Left    │ Right   │
+├─────────┼─────────┤
+│ Bottom  │ Bottom  │
+│ Left    │ Right   │
+└─────────┴─────────┘
+```
+
+### Maximize vs Fullscreen
+
+- **Maximize**: Window fills the screen but the menu bar and dock remain visible
+- **Fullscreen**: True macOS fullscreen mode (menu bar and dock hidden)
+
+---
+
+## Example triggers
+
+| Trigger Phrase | Layout |
+|----------------|--------|
+| "window left" | Left Half |
+| "window right" | Right Half |
+| "window top" | Top Half |
+| "window bottom" | Bottom Half |
+| "top left" | Top Left Quarter |
+| "top right" | Top Right Quarter |
+| "bottom left" | Bottom Left Quarter |
+| "bottom right" | Bottom Right Quarter |
+| "center window" | Center |
+| "maximize" | Maximize |
+| "fullscreen" | Fullscreen |
+
+---
+
+## Creating a window layout trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase (e.g., "window left").
+  </Step>
+  <Step title="Choose Exact matching">
+    Select **Exact** — window commands don't need variable input.
+  </Step>
+  <Step title="Select Window Layout">
+    Choose **Window Layout** as the action type.
+  </Step>
+  <Step title="Pick a layout">
+    Select the layout (e.g., Left Half).
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Multi-monitor support
+
+Window layouts detect which screen your window is on and snap to that screen. If you have multiple monitors, the layout applies to the monitor where the window currently sits.
+
+---
+
+## Tips
+
+- **Use exact matching** — Window commands are precise, no variable input needed
+- **Create a full set** — Make triggers for all positions you use regularly
+- **Pair with app launcher** — "Open Safari and window left" using compound actions
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Window Actions" icon="arrows-up-down-left-right" href="/triggers/types/window-actions">
+    Custom positioning and resizing.
+  </Card>
+  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
+    Combine with other actions.
+  </Card>
+</CardGroup>

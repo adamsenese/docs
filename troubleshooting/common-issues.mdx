@@ -1,0 +1,187 @@
+---
+title: "Common Issues"
+description: "Solutions to frequently encountered problems with Hermes."
+---
+
+## Hermes isn't transcribing
+
+**Symptoms**: You press your hotkey but nothing happens, or the Hermes bar appears but no text is recognized.
+
+### Check microphone permission
+
+1. Go to **System Settings → Privacy & Security → Microphone**
+2. Make sure Hermes is listed and enabled
+3. If not listed, re-open Hermes and grant permission when prompted
+
+### Check your microphone
+
+1. Open **System Settings → Sound → Input**
+2. Speak and watch the input level meter
+3. Make sure your microphone is working and selected
+
+### Check hotkey
+
+1. Make sure you're pressing the correct hotkey
+2. Try pressing and holding (not just tapping)
+3. Check **Settings → Keyboard Shortcuts** to verify your hotkey
+
+<Card title="Permissions guide" icon="lock" href="/troubleshooting/permissions">
+  Detailed permission troubleshooting.
+</Card>
+
+---
+
+## Text isn't appearing in apps
+
+**Symptoms**: Hermes transcribes your speech, but the text doesn't appear where your cursor is.
+
+### Check Accessibility permission
+
+1. Go to **System Settings → Privacy & Security → Accessibility**
+2. Make sure Hermes is listed and enabled
+3. If it's there but not working, remove it and add it again
+
+### Check cursor focus
+
+1. Make sure your cursor is in a text field
+2. Click in the text field before dictating
+3. Some apps or fields may not support text insertion
+
+### Try a different app
+
+Test in a simple app like TextEdit or Notes. If it works there, the issue is with the specific app you were trying.
+
+---
+
+## Hotkey not working
+
+**Symptoms**: Pressing your hotkey doesn't start dictation.
+
+### Check Input Monitoring permission
+
+1. Go to **System Settings → Privacy & Security → Input Monitoring**
+2. Make sure Hermes is listed and enabled
+
+### Check for conflicts
+
+Another app may be using the same hotkey. Try a different key combination in **Settings → Keyboard Shortcuts**.
+
+### Restart Hermes
+
+Quit Hermes completely (⌘Q) and reopen it.
+
+<Card title="Hotkey troubleshooting" icon="keyboard" href="/settings/keyboard-shortcuts">
+  Keyboard shortcuts settings.
+</Card>
+
+---
+
+## AI formatting isn't working
+
+**Symptoms**: Text appears but isn't formatted—no punctuation, capitalization, or filler word removal.
+
+### Check if AI formatting is enabled
+
+1. Go to **Settings → AI Formatting**
+2. Make sure **Enable AI Formatting** is on
+
+### Check your plan
+
+AI formatting may be limited or unavailable on the Free plan. Check your plan status in **Settings → Account**.
+
+### Check internet connection
+
+AI formatting requires an internet connection (unless using Local AI). Make sure you're online.
+
+### Check daily limits
+
+You may have reached your daily AI formatting limit. Check usage in **Settings → AI Formatting → Usage**.
+
+---
+
+## Hermes is slow
+
+**Symptoms**: Long delay between speaking and text appearing.
+
+### Check internet connection
+
+Cloud AI formatting requires internet. A slow connection causes delays.
+
+### Try Local AI
+
+Enable **Local AI** in **Settings → AI Formatting** for on-device processing. It's slower than cloud but works offline.
+
+### Close other apps
+
+Hermes uses your Mac's resources. Closing resource-intensive apps may help.
+
+### Check CPU usage
+
+Open **Activity Monitor** and look for high CPU usage. If Hermes is using too much, try restarting it.
+
+---
+
+## Filler words aren't being removed
+
+**Symptoms**: "Um", "uh", "like" appear in your text.
+
+### Enable filler word removal
+
+1. Go to **Settings → Dictation**
+2. Enable **Remove Filler Words**
+
+Or rely on AI formatting, which also removes fillers when enabled.
+
+---
+
+## Wrong language detected
+
+**Symptoms**: Hermes transcribes in the wrong language.
+
+### Set your primary language
+
+1. Go to **Settings → Dictation → Language**
+2. Select your correct primary language
+3. Remove any unwanted additional languages
+
+---
+
+## Sync isn't working
+
+**Symptoms**: Changes don't appear on other devices.
+
+### Check Cloud Sync
+
+1. Go to **Settings → Privacy**
+2. Make sure **Cloud Sync** is enabled
+3. Make sure **Privacy Mode** is off
+
+### Check your account
+
+1. Make sure you're signed in
+2. Check that you're using the same account on all devices
+
+### Force sync
+
+1. Go to **Settings → Account**
+2. Look for a **Sync Now** option
+
+---
+
+## Still having issues?
+
+If these solutions don't help:
+
+1. **Restart Hermes** — Quit completely and reopen
+2. **Restart your Mac** — Clears system-level issues
+3. **Update Hermes** — Make sure you're on the latest version
+4. **Contact support** — Email support@hermesvoice.com
+
+<CardGroup cols={2}>
+  <Card title="Permissions issues" icon="lock" href="/troubleshooting/permissions">
+    Detailed permission troubleshooting.
+  </Card>
+  <Card title="Audio issues" icon="microphone" href="/troubleshooting/audio">
+    Microphone and audio troubleshooting.
+  </Card>
+</CardGroup>

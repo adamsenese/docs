@@ -1,0 +1,184 @@
+---
+title: "Keyboard Shortcuts"
+description: "Simulate keyboard input with voice triggers."
+---
+
+## What it does
+
+Keyboard Shortcuts sends key presses to your Mac as if you typed them. Say "copy" and it presses ⌘C. Say "save" and it presses ⌘S.
+
+## Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Key Sequence** | Required | List of key presses to simulate |
+| **Target App** | None | Focus specific app first |
+| **Target URL** | None | Open URL first |
+| **URL Load Delay** | 1000ms | Wait after opening URL |
+| **Repeat Count** | 1 | Times to repeat the sequence |
+| **Delay Between Repeats** | 100ms | Pause between repetitions |
+
+---
+
+## Modifier keys
+
+| Modifier | Symbol | Key |
+|----------|--------|-----|
+| Command | ⌘ | Command key |
+| Option | ⌥ | Option/Alt key |
+| Control | ⌃ | Control key |
+| Shift | ⇧ | Shift key |
+| Function | Fn | Function key |
+
+---
+
+## Supported keys
+
+**Letters**: A–Z
+
+**Numbers**: 0–9
+
+**Function keys**: F1–F20
+
+**Special keys**:
+- Return (Enter)
+- Tab
+- Space
+- Delete (Backspace)
+- Escape
+- Home, End
+- Page Up, Page Down
+- Arrow keys (←↑↓→)
+
+**Punctuation**: All standard symbols
+
+---
+
+## Built-in presets
+
+Common shortcuts are available as presets:
+
+| Preset | Keys | Action |
+|--------|------|--------|
+| Copy | ⌘C | Copy selection |
+| Paste | ⌘V | Paste clipboard |
+| Cut | ⌘X | Cut selection |
+| Undo | ⌘Z | Undo last action |
+| Redo | ⌘⇧Z | Redo |
+| Save | ⌘S | Save document |
+| Select All | ⌘A | Select everything |
+| Find | ⌘F | Open find dialog |
+| New Tab | ⌘T | Open new tab |
+| Close Tab | ⌘W | Close current tab |
+| Quit | ⌘Q | Quit application |
+| Command Palette | ⌘⇧P | Open command palette (VS Code, etc.) |
+
+---
+
+## Examples
+
+### Simple shortcut
+
+**Trigger**: "copy"
+**Keys**: ⌘C
+**Result**: Copies selected text
+
+### Multi-key sequence
+
+**Trigger**: "select all and copy"
+**Keys**: ⌘A, then ⌘C (with 100ms delay)
+**Result**: Selects all, then copies
+
+### Repeated keys
+
+**Trigger**: "scroll down"
+**Keys**: ↓
+**Repeat**: 10 times
+**Delay**: 50ms
+**Result**: Presses down arrow 10 times
+
+### App-specific shortcut
+
+**Trigger**: "format code"
+**Target App**: Visual Studio Code
+**Keys**: ⌥⇧F
+**Result**: Focuses VS Code and formats document
+
+---
+
+## Creating a keyboard shortcut trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase (e.g., "save").
+  </Step>
+  <Step title="Choose Exact matching">
+    Select **Exact** for simple commands.
+  </Step>
+  <Step title="Select Keyboard Shortcuts">
+    Choose **Keyboard Shortcuts** as the action type.
+  </Step>
+  <Step title="Build your key sequence">
+    - Add key presses
+    - Set modifiers (⌘, ⌥, ⌃, ⇧)
+    - Add delays between keys if needed
+  </Step>
+  <Step title="Configure options">
+    - Set target app if needed
+    - Set repeat count if needed
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Advanced usage
+
+### Open URL then press keys
+
+1. Set **Target URL** (e.g., `notion.so`)
+2. Set **URL Load Delay** (e.g., 2000ms to let page load)
+3. Set your key sequence
+4. The URL opens, waits, then keys are pressed
+
+### Sequences with delays
+
+Add delays between key presses when apps need time to respond:
+
+```
+⌘A (select all)
+   wait 100ms
+⌘C (copy)
+   wait 100ms
+⌘V (paste)
+```
+
+---
+
+## Tips
+
+- **Use exact matching** — Shortcut commands are specific
+- **Add delays** if keys seem to be missed
+- **Test in target apps** — Some apps capture keys differently
+- **Combine with other triggers** — Use compound actions for complex workflows
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Terminal Commands" icon="terminal" href="/triggers/types/terminal">
+    Run shell commands instead.
+  </Card>
+  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
+    Chain multiple actions.
+  </Card>
+</CardGroup>

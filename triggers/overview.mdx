@@ -1,0 +1,88 @@
+---
+title: "What Are Triggers?"
+description: "Automate actions with voice commands—search the web, open apps, control windows, and more."
+---
+
+## The concept
+
+Triggers let you automate actions with your voice. When Hermes hears a specific phrase, it performs an action instead of (or in addition to) typing text.
+
+```
+You say: "search google for best coffee shops nearby"
+         └── trigger ──┘ └────── remainder ───────┘
+
+Trigger phrase: "search google for"
+Action: Opens Google with "best coffee shops nearby"
+```
+
+## Why use triggers?
+
+- **Speed** — Actions happen instantly, no clicking or typing
+- **Hands-free** — Control your Mac without touching it
+- **Consistency** — Same phrase, same result, every time
+- **Power** — Chain complex workflows together
+
+---
+
+## Trigger anatomy
+
+Every trigger has these components:
+
+| Component | Description |
+|-----------|-------------|
+| **Trigger Phrase** | The words that activate the trigger |
+| **Matching Mode** | How the phrase is matched (prefix, exact, contains) |
+| **Action Type** | What happens when triggered |
+| **Action Config** | Settings specific to that action |
+| **Enabled** | Whether the trigger is active |
+
+---
+
+## Trigger types
+
+Hermes supports 11 types of actions:
+
+| Type | What it does | Complexity |
+|------|--------------|------------|
+| [Text Expansion](/triggers/types/text-expansion) | Replace phrase with text | Simple |
+| [Web Search](/triggers/types/web-search) | Search the web | Simple |
+| [App Launcher](/triggers/types/app-launcher) | Open applications | Simple |
+| [Window Layout](/triggers/types/window-layout) | Snap windows to positions | Simple |
+| [Window Actions](/triggers/types/window-actions) | Move/resize windows | Medium |
+| [Keyboard Shortcuts](/triggers/types/keyboard-shortcuts) | Simulate key presses | Medium |
+| [Siri Shortcuts](/triggers/types/siri-shortcuts) | Run Shortcuts app workflows | Medium |
+| [Terminal Commands](/triggers/types/terminal) | Run shell commands | Advanced |
+| [AI Calls](/triggers/types/ai-calls) | Custom AI responses | Advanced |
+| [Text Formatting](/triggers/types/text-formatting) | Edit/reply to text with AI | Medium |
+| [Compound Actions](/triggers/types/compound-actions) | Chain multiple actions | Advanced |
+
+---
+
+## How triggers work
+
+1. **You speak** — "window left"
+2. **Hermes transcribes** — Converts speech to text
+3. **Trigger matching** — Checks if any trigger phrase matches
+4. **Action execution** — Runs the associated action
+5. **Result** — Window snaps to left half of screen
+
+The whole process takes about a second.
+
+---
+
+## Getting started
+
+<CardGroup cols={2}>
+  <Card title="Create your first trigger" icon="plus" href="/triggers/creating-triggers">
+    Step-by-step guide to making a trigger.
+  </Card>
+  <Card title="Matching modes" icon="crosshairs" href="/triggers/matching-modes">
+    How trigger phrases are matched.
+  </Card>
+  <Card title="Default triggers" icon="list-check" href="/triggers/defaults">
+    Pre-built triggers you can enable.
+  </Card>
+  <Card title="Variables" icon="code" href="/triggers/variables">
+    Use dynamic values in your triggers.
+  </Card>
+</CardGroup>

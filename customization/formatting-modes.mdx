@@ -1,0 +1,162 @@
+---
+title: "Formatting Modes"
+description: "Customize how Hermes formats text for different apps and contexts."
+---
+
+## What are formatting modes?
+
+Formatting modes let you customize how Hermes formats your dictation based on which app you're using. Each mode has its own style—casual for Slack, formal for email, minimal for code.
+
+Hermes includes built-in modes, and you can create your own.
+
+---
+
+## Built-in modes
+
+| Mode | Apps included | Style |
+|------|---------------|-------|
+| **Messaging** | Slack, Discord, Teams, iMessage, WhatsApp, Telegram | Casual — lowercase OK, relaxed punctuation |
+| **Email** | Mail, Gmail, Outlook, Spark | Formal — proper capitalization, professional tone |
+| **Coding** | VS Code, Xcode, Cursor, Terminal, GitHub | Minimal — preserves technical terms, light formatting |
+| **Writing** | Notes, Word, Pages, Notion, Obsidian | Semi-casual — clear structure, proper formatting |
+| **AI Assistants** | ChatGPT, Claude, Grok | Casual — conversational prompts |
+| **Disabled** | (Your choice) | No formatting — raw transcription |
+
+### Web apps
+
+Modes work with web apps too. When you're in a browser, Hermes detects the website:
+
+- `mail.google.com` → Email mode
+- `slack.com` → Messaging mode
+- `github.com` → Coding mode
+- `notion.so` → Writing mode
+- `chat.openai.com` → AI Assistants mode
+
+---
+
+## Talking habits
+
+Each mode uses a "talking habit" that sets the overall tone:
+
+| Habit | Description | Example output |
+|-------|-------------|----------------|
+| **Casual** | Relaxed, conversational | "hey, sounds good! let me know" |
+| **Semi-casual** | Balanced, clear | "Hey, that sounds good. Let me know." |
+| **Formal** | Professional, polished | "Hello, that sounds agreeable. Please let me know." |
+
+You can set a different talking habit for each mode. For example:
+- Messaging → Casual
+- Email → Formal
+- Writing → Semi-casual
+
+---
+
+## Creating a custom mode
+
+<Steps>
+  <Step title="Open Formatting Modes">
+    Go to **Settings → AI Formatting → Modes**.
+  </Step>
+  <Step title="Click Add Mode">
+    Click **+** or **Add Mode**.
+  </Step>
+  <Step title="Name your mode">
+    Give it a descriptive name like "Work Slack" or "Personal Notes".
+  </Step>
+  <Step title="Add apps">
+    Add the apps or websites that should use this mode:
+    - For native apps: Select from the app list
+    - For web apps: Enter the domain (e.g., `mycompany.slack.com`)
+  </Step>
+  <Step title="Set the talking habit">
+    Choose Casual, Semi-casual, or Formal.
+  </Step>
+  <Step title="Add custom instructions (optional)">
+    Write specific formatting rules for this mode.
+  </Step>
+</Steps>
+
+---
+
+## Custom instructions
+
+You can add specific rules to any mode. These are natural language instructions that Hermes follows when formatting.
+
+### Examples
+
+**For Email mode:**
+```
+Always start with a greeting.
+Expand contractions (don't → do not).
+End with a professional sign-off.
+```
+
+**For Slack mode:**
+```
+Keep messages under 50 words.
+Use emoji sparingly.
+Don't capitalize the first word.
+```
+
+**For Coding mode:**
+```
+Preserve all technical terms exactly.
+Don't add periods at the end.
+Keep variable names intact.
+```
+
+### Where to add custom instructions
+
+1. Go to **Settings → AI Formatting → Modes**
+2. Select a mode
+3. Scroll to **Custom Instructions**
+4. Enter your rules
+5. Save
+
+---
+
+## Editing built-in modes
+
+You can modify the built-in modes:
+
+- **Add or remove apps** — Customize which apps use each mode
+- **Change talking habit** — Make Email more casual, or Messaging more formal
+- **Add custom instructions** — Layer your own rules on top
+
+Changes only affect your account. The original defaults remain available.
+
+---
+
+## The Disabled mode
+
+The **Disabled** mode skips all AI formatting. Use it for apps where you want raw transcription.
+
+To disable formatting for an app:
+
+1. Go to **Settings → AI Formatting → Modes → Disabled**
+2. Add the app to this mode
+3. Dictation in that app will be unformatted
+
+---
+
+## Mode priority
+
+If an app matches multiple modes, Hermes uses the most specific match:
+
+1. **Custom URL match** — `mycompany.slack.com` beats `slack.com`
+2. **Custom mode** — Your modes take priority over built-in ones
+3. **Built-in mode** — Default modes as fallback
+4. **No mode** — Uses your default talking habit
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="AI Formatting" icon="wand-magic-sparkles" href="/features/ai-formatting">
+    How context detection and formatting works.
+  </Card>
+  <Card title="AI Formatting Settings" icon="gear" href="/settings/ai-formatting">
+    All AI formatting options.
+  </Card>
+</CardGroup>

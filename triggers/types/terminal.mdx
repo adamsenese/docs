@@ -1,0 +1,209 @@
+---
+title: "Terminal Commands"
+description: "Run shell commands with your voice."
+---
+
+## What it does
+
+Terminal Commands execute shell commands on your Mac. Run scripts, manage files, control system settings, or automate development tasks—all with your voice.
+
+<Warning>
+Terminal commands run with your user permissions. Be careful with destructive commands like `rm -rf`.
+</Warning>
+
+## Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Commands** | Required | List of shell commands to run |
+| **Execution Mode** | Background | Background (silent) or Visual (shows terminal) |
+| **Terminal App** | System Default | Which terminal to use |
+| **Working Directory** | None | Directory to run commands in |
+| **Close Tab When Complete** | Off | Auto-close terminal tab after running |
+| **Close Tab Delay** | 2000ms | Wait before closing |
+
+---
+
+## Execution modes
+
+### Background (silent)
+
+Commands run without opening a terminal window. Output is captured but not displayed.
+
+**Use cases**:
+- Quick file operations
+- System commands
+- Scripts that don't need interaction
+- Automation that should be invisible
+
+### Visual
+
+Commands run in a terminal window you can see.
+
+**Use cases**:
+- Interactive commands
+- Long-running processes
+- Debugging scripts
+- Commands where you want to see output
+
+---
+
+## Supported terminals
+
+| Terminal | Notes |
+|----------|-------|
+| Terminal.app | macOS built-in, full support |
+| iTerm | Full support |
+| Warp | Keystroke fallback |
+| Hyper | Keystroke fallback |
+| Alacritty | Keystroke fallback |
+| kitty | Keystroke fallback |
+
+---
+
+## Environment variables
+
+Your commands have access to special variables:
+
+| Variable | Description |
+|----------|-------------|
+| `$HERMES_INPUT` | Your transcription (the remainder after trigger) |
+| `$HERMES_SCREENSHOT` | Path to screenshot (if captured) |
+
+### Example: Use transcription in command
+
+**Trigger**: "create file"
+**Command**: `touch ~/Desktop/"$HERMES_INPUT".txt`
+
+Say: "create file meeting notes"
+Result: Creates `~/Desktop/meeting notes.txt`
+
+---
+
+## Examples
+
+### Open project in VS Code
+
+**Trigger**: "open project"
+**Command**: `cd ~/projects/myapp && code .`
+
+### Git status
+
+**Trigger**: "git status"
+**Command**: `git status`
+**Mode**: Visual
+
+### Create and open file
+
+**Trigger**: "new note"
+**Command**:
+```bash
+touch ~/Desktop/note-$(date +%Y%m%d).txt && open ~/Desktop/note-$(date +%Y%m%d).txt
+```
+
+### Kill process by name
+
+**Trigger**: "kill"
+**Command**: `pkill -f "$HERMES_INPUT"`
+
+Say: "kill chrome"
+Result: Kills Chrome processes
+
+### Copy text to clipboard
+
+**Trigger**: "clip"
+**Command**: `echo "$HERMES_INPUT" | pbcopy`
+
+Say: "clip hello world"
+Result: "hello world" copied to clipboard
+
+---
+
+## Command sequences
+
+You can run multiple commands in sequence:
+
+| Command | Delay After |
+|---------|-------------|
+| `cd ~/projects` | 0ms |
+| `git pull` | 0ms |
+| `npm install` | 0ms |
+| `npm run dev` | 0ms |
+
+Each command runs after the previous one completes.
+
+---
+
+## Security warnings
+
+Hermes warns about potentially dangerous commands:
+
+| Pattern | Risk |
+|---------|------|
+| `rm -rf` | Recursive deletion |
+| `sudo` | Elevated privileges |
+| `mkfs` | Filesystem formatting |
+| `dd if=` | Disk operations |
+| `curl \| sh` | Remote script execution |
+| `wget \| bash` | Remote script execution |
+| `shutdown` | System shutdown |
+| `reboot` | System restart |
+
+You can still run these commands, but Hermes will ask for confirmation.
+
+---
+
+## Creating a terminal trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase (e.g., "git status").
+  </Step>
+  <Step title="Choose matching mode">
+    **Exact** for simple commands, **Prefix** if you need input.
+  </Step>
+  <Step title="Select Terminal">
+    Choose **Terminal Commands** as the action type.
+  </Step>
+  <Step title="Add commands">
+    Enter your shell commands. Add delays if needed.
+  </Step>
+  <Step title="Set execution mode">
+    Choose Background (silent) or Visual.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Tips
+
+- **Use background mode** for quick, non-interactive commands
+- **Use visual mode** for long-running or interactive commands
+- **Set working directory** to avoid `cd` commands
+- **Use `$HERMES_INPUT`** to pass voice input to scripts
+- **Test commands manually first** before creating triggers
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Keyboard Shortcuts" icon="keyboard" href="/triggers/types/keyboard-shortcuts">
+    Simulate key presses instead.
+  </Card>
+  <Card title="Siri Shortcuts" icon="wand-magic-sparkles" href="/triggers/types/siri-shortcuts">
+    Run Shortcuts app workflows.
+  </Card>
+  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
+    Chain with other actions.
+  </Card>
+</CardGroup>

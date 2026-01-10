@@ -1,0 +1,168 @@
+---
+title: "Text Formatting"
+description: "Edit or reply to selected text using AI."
+---
+
+## What it does
+
+Text Formatting uses AI to edit or reply to selected text. Unlike AI Calls (which use custom prompts), Text Formatting provides pre-built actions for common text operations.
+
+## Formatting types
+
+| Type | What it does |
+|------|--------------|
+| **Edit** | Modify selected text based on your instruction |
+| **Reply** | Generate a response to selected text |
+
+---
+
+## Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Formatting Type** | Edit | Edit or Reply |
+| **Requires Selection** | Yes | Must have text selected |
+| **Use Vision** | Off | Include screenshot for context |
+| **Output Handling** | Inject | What to do with result |
+
+---
+
+## Edit mode
+
+Edit mode modifies selected text based on your voice instruction.
+
+### How to use
+
+1. Select the text you want to edit
+2. Trigger the action
+3. Speak your editing instruction
+4. The text is transformed
+
+### Example instructions
+
+| You say | What happens |
+|---------|--------------|
+| "make this shorter" | Condenses the text |
+| "make this longer" | Expands with more detail |
+| "fix the grammar" | Corrects errors |
+| "make it formal" | Professional tone |
+| "make it casual" | Relaxed tone |
+| "bullet points" | Converts to list |
+| "summarize" | Creates summary |
+| "simplify" | Simpler language |
+
+### Example
+
+**Selected text**:
+> "I wanted to reach out regarding the upcoming project timeline and discuss the various deliverables we need to complete."
+
+**You say**: "make it shorter"
+
+**Result**:
+> "I wanted to discuss the project timeline and deliverables."
+
+---
+
+## Reply mode
+
+Reply mode generates a response to selected text.
+
+### How to use
+
+1. Select the text you want to reply to
+2. Trigger the action
+3. Speak your response intent
+4. A formatted reply is generated
+
+### Examples
+
+**Selected email**:
+> "Can you join the meeting tomorrow at 2pm?"
+
+**You say**: "yes that works"
+
+**Result**:
+> "Yes, 2pm tomorrow works for me. I'll be there."
+
+---
+
+**Selected Slack message**:
+> "Hey, can you review my PR when you have time?"
+
+**You say**: "sure, I'll look this afternoon"
+
+**Result**:
+> "Sure! I'll take a look this afternoon."
+
+---
+
+## Context awareness
+
+Text Formatting understands context from multiple sources:
+
+1. **Selected text** — The text you highlighted
+2. **Vision** (if enabled) — What's on your screen
+3. **Text field context** — Surrounding text
+4. **App context** — Which app you're in
+
+This helps generate appropriate edits and replies.
+
+---
+
+## Creating a Text Formatting trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase (e.g., "edit this" or "reply").
+  </Step>
+  <Step title="Choose Prefix matching">
+    Select **Prefix** so you can speak your instruction.
+  </Step>
+  <Step title="Select Text Formatting">
+    Choose **Text Formatting** as the action type.
+  </Step>
+  <Step title="Choose Edit or Reply">
+    Select the formatting type.
+  </Step>
+  <Step title="Configure options">
+    Enable Vision if helpful for context.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Text Formatting vs AI Calls
+
+| Feature | Text Formatting | AI Calls |
+|---------|-----------------|----------|
+| Custom prompts | No | Yes |
+| Pre-built actions | Yes (Edit/Reply) | No |
+| Ease of use | Simpler | More flexible |
+| Best for | Quick edits, replies | Custom AI workflows |
+
+Use Text Formatting for quick, common operations. Use AI Calls when you need custom prompts.
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="AI Calls" icon="robot" href="/triggers/types/ai-calls">
+    Custom AI prompts for more control.
+  </Card>
+  <Card title="Hermes Edit" icon="pen" href="/features/hermes-edit">
+    Built-in edit feature.
+  </Card>
+  <Card title="Hermes Reply" icon="reply" href="/features/hermes-reply">
+    Built-in reply feature.
+  </Card>
+</CardGroup>

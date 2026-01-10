@@ -1,0 +1,174 @@
+---
+title: "Matching Modes"
+description: "How Hermes matches your speech to trigger phrases."
+---
+
+## Three matching modes
+
+When you create a trigger, you choose how the phrase should be matched:
+
+| Mode | Matches when... | Best for |
+|------|-----------------|----------|
+| **Prefix** | Speech *starts with* the phrase | Commands with variable input |
+| **Exact** | Speech *is exactly* the phrase | Single-action commands |
+| **Contains** | Phrase appears *anywhere* in speech | Flexible matching |
+
+---
+
+## Prefix match
+
+The most common mode. The trigger activates when your speech starts with the trigger phrase. Everything after the phrase becomes the "remainder" — available for use in your action.
+
+### Example
+
+```
+Trigger phrase: "search google for"
+Matching mode:  Prefix
+
+Speech: "search google for best coffee nearby"
+         └── phrase ──┘ └─── remainder ───┘
+
+✅ Match! Remainder = "best coffee nearby"
+```
+
+### Use cases
+
+- **Web search**: "search google for [query]"
+- **App launch**: "open [app name]"
+- **AI prompts**: "ask hermes [question]"
+
+### The remainder
+
+In prefix mode, the text after your trigger phrase is captured as the `{remainder}` variable. Use it in your action configuration:
+
+- Web search: The remainder becomes the search query
+- AI calls: The remainder becomes part of your prompt
+- Text expansion: The remainder can be inserted in templates
+
+---
+
+## Exact match
+
+The trigger only activates when your speech is exactly the trigger phrase — nothing more, nothing less.
+
+### Example
+
+```
+Trigger phrase: "window left"
+Matching mode:  Exact
+
+Speech: "window left"
+✅ Match!
+
+Speech: "window left please"
+❌ No match (extra words)
+
+Speech: "move window left"
+❌ No match (extra words at start)
+```
+
+### Use cases
+
+- **Window layouts**: "maximize", "fullscreen"
+- **Single actions**: "paste", "undo"
+- **Precise commands**: "lock screen"
+
+### When to use exact
+
+Use exact matching when:
+- You don't need any variable input
+- You want to avoid accidental triggers
+- The action is a single, specific command
+
+---
+
+## Contains match
+
+The trigger activates when the phrase appears anywhere in your speech.
+
+### Example
+
+```
+Trigger phrase: "reminder"
+Matching mode:  Contains
+
+Speech: "set a reminder for tomorrow"
+✅ Match!
+
+Speech: "reminder to call mom"
+✅ Match!
+
+Speech: "don't forget the reminder"
+✅ Match!
+```
+
+### Use cases
+
+- **Keyword detection**: Trigger on specific words regardless of context
+- **Natural speech**: Allow more conversational phrasing
+- **Flexible matching**: When exact position doesn't matter
+
+### Caution
+
+Contains mode can trigger unexpectedly if your phrase is a common word. Use distinctive phrases.
+
+---
+
+## How matching works
+
+Hermes uses a smart matching system with multiple fallback levels:
+
+### 1. Exact match
+First, Hermes checks if your normalized speech exactly matches a trigger phrase.
+
+### 2. Smart matching
+Handles minor variations:
+- Plurals: "windows" matches "window"
+- Compound words: "screenshot" matches "screen shot"
+
+### 3. Fuzzy matching
+Allows small errors (typos or misheard words):
+- Maximum 2 character difference
+- First character must match
+- Short phrases (under 5 characters) allow only 1 difference
+
+### 4. Phonetic matching
+Matches words that sound alike:
+- "write" matches "right"
+- "there" matches "their"
+
+### Normalization
+
+Before matching, Hermes normalizes your speech:
+- Converts to lowercase
+- Removes punctuation
+- Collapses multiple spaces
+- Replaces hyphens with spaces
+
+This means "Window-Left!" matches "window left".
+
+---
+
+## Choosing the right mode
+
+| Scenario | Recommended Mode |
+|----------|------------------|
+| Search with a query | Prefix |
+| Open app by name | Prefix |
+| Snap window to position | Exact |
+| Toggle a setting | Exact |
+| Detect a keyword anywhere | Contains |
+| Natural language command | Contains |
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Creating triggers" icon="plus" href="/triggers/creating-triggers">
+    Step-by-step trigger creation.
+  </Card>
+  <Card title="Variables" icon="code" href="/triggers/variables">
+    Use remainder and other variables.
+  </Card>
+</CardGroup>

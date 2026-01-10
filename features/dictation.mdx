@@ -1,0 +1,142 @@
+---
+title: "Dictation"
+description: "How to use voice dictation in Hermes—speaking tips, the Hermes bar, and viewing your history."
+---
+
+## How dictation works
+
+Hermes listens to your voice, transcribes it in real-time, formats the text intelligently, and inserts it wherever your cursor is. The whole process takes about a second.
+
+```
+You speak → Hermes transcribes → AI formats → Text appears
+```
+
+## Starting and stopping dictation
+
+### Press and hold (default)
+
+1. **Press your hotkey** (Fn by default) and hold it down
+2. **Speak** while holding the key
+3. **Release the key** when you're done
+4. Text is processed and inserted
+
+This is the default mode—quick and intuitive for short dictations.
+
+### Double-tap for long dictations
+
+For longer dictations where holding a key is uncomfortable:
+
+1. **Double-tap your hotkey** quickly
+2. **Speak freely** without holding anything
+3. **Tap the hotkey once** to stop, or let Hermes auto-stop after silence
+
+<Tip>
+  Double-tap mode is great for writing long emails, taking notes in meetings, or journaling.
+</Tip>
+
+### Auto-stop after silence
+
+By default, Hermes automatically stops recording after a few seconds of silence. You can adjust this in **Settings → Dictation**.
+
+---
+
+## The Hermes bar
+
+When you start dictating, the Hermes bar appears on your screen. It shows:
+
+- **Audio waveform** — Visual feedback that Hermes is hearing you
+- **Live transcription** — Your words appear as you speak
+- **Status indicators** — Recording, processing, or ready
+
+### Bar position
+
+The bar appears at the bottom center of your screen by default. You can change this in **Settings → Interface**:
+
+- Top Left, Top Middle, Top Right
+- Bottom Left, Bottom Middle, Bottom Right
+
+### Multi-monitor support
+
+If you enable **Follow Active Screen** in settings, the bar appears on whichever screen has your active window.
+
+---
+
+## Speaking tips
+
+### Speak naturally
+
+Don't try to sound like a robot. Hermes is trained on natural speech:
+
+- **Pause to think** — It's fine to take a moment
+- **Say filler words** — "Um", "uh", "like" are automatically removed
+- **Vary your pace** — You don't need to speak slowly or rush
+
+### Don't say punctuation
+
+Unlike older dictation systems, you don't need to say "period" or "comma". Hermes adds punctuation based on context:
+
+| You say | Hermes writes |
+|---------|---------------|
+| "Hi how are you" | "Hi, how are you?" |
+| "Let me know thanks" | "Let me know. Thanks!" |
+| "The meeting is at 3 pm" | "The meeting is at 3 PM." |
+
+### Numbers are converted automatically
+
+| You say | Hermes writes |
+|---------|---------------|
+| "twenty three" | "23" |
+| "one hundred dollars" | "$100" |
+| "call me at five five five one two three four" | "Call me at 555-1234" |
+
+---
+
+## Supported languages
+
+Hermes supports dictation in many languages. The primary engine (FluidAudio) excels at European languages, while the fallback engine (Whisper) supports 99 languages worldwide.
+
+**Popular languages:**
+- English (US, UK, Australian)
+- Spanish
+- French
+- German
+- Italian
+- Portuguese
+- Dutch
+- And many more
+
+Set your preferred language in **Settings → Dictation → Language**.
+
+---
+
+## Viewing your history
+
+Every dictation is saved to your history. To view past dictations:
+
+1. Open the Hermes app
+2. Go to the **Home** or **History** section
+3. Browse your recent dictations
+
+From history, you can:
+- **Copy** a past dictation
+- **Delete** dictations you don't need
+- **Save as a note** for longer-term storage
+
+---
+
+## Related features
+
+<CardGroup cols={2}>
+  <Card title="AI Formatting" icon="wand-magic-sparkles" href="/features/ai-formatting">
+    How Hermes formats your text based on context.
+  </Card>
+  <Card title="Keyboard Shortcuts" icon="keyboard" href="/features/hotkeys">
+    All available hotkeys and how to customize them.
+  </Card>
+  <Card title="Dictionary" icon="book" href="/customization/dictionary">
+    Teach Hermes custom words and pronunciations.
+  </Card>
+  <Card title="Notes" icon="note-sticky" href="/features/notes">
+    Save and organize your dictations.
+  </Card>
+</CardGroup>

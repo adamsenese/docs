@@ -1,0 +1,186 @@
+---
+title: "Permissions Issues"
+description: "Fixing macOS permission problems with Hermes."
+---
+
+## Overview
+
+Hermes needs several macOS permissions to function. If any are missing or misconfigured, features won't work correctly.
+
+| Permission | What breaks without it |
+|------------|------------------------|
+| Microphone | No audio capture at all |
+| Accessibility | Text won't insert into apps |
+| Input Monitoring | Hotkey won't work globally |
+| Screen Recording | Vision context unavailable |
+
+---
+
+## Microphone permission
+
+### Symptoms
+- Hermes bar appears but shows no audio
+- "Microphone access required" error
+- Transcription never starts
+
+### Fix
+
+<Steps>
+  <Step title="Open System Settings">
+    Apple menu () → System Settings
+  </Step>
+  <Step title="Go to Microphone">
+    Privacy & Security → Microphone
+  </Step>
+  <Step title="Enable Hermes">
+    Find Hermes in the list and toggle it **on**.
+
+    If Hermes isn't listed, you may need to trigger a permission prompt by trying to dictate.
+  </Step>
+</Steps>
+
+### Still not working?
+
+1. Toggle Hermes **off**, then **on** again
+2. Quit and restart Hermes
+3. Restart your Mac
+
+---
+
+## Accessibility permission
+
+### Symptoms
+- Hermes transcribes but text doesn't appear
+- "Accessibility access required" error
+- Text appears in Hermes but not in target app
+
+### Fix
+
+<Steps>
+  <Step title="Open System Settings">
+    Apple menu () → System Settings
+  </Step>
+  <Step title="Go to Accessibility">
+    Privacy & Security → Accessibility
+  </Step>
+  <Step title="Add Hermes">
+    If Hermes is listed, make sure it's toggled **on**.
+
+    If not listed, click **+**, navigate to Applications, and select Hermes.
+  </Step>
+</Steps>
+
+### If Hermes is listed but not working
+
+1. **Remove Hermes** from the list (select it, click **-**)
+2. **Add it again** (click **+**, select Hermes)
+3. **Restart Hermes**
+
+Sometimes macOS caches permissions incorrectly, and re-adding fixes it.
+
+---
+
+## Input Monitoring permission
+
+### Symptoms
+- Hotkey only works when Hermes is focused
+- Hotkey doesn't respond at all
+- Other apps capture your hotkey
+
+### Fix
+
+<Steps>
+  <Step title="Open System Settings">
+    Apple menu () → System Settings
+  </Step>
+  <Step title="Go to Input Monitoring">
+    Privacy & Security → Input Monitoring
+  </Step>
+  <Step title="Enable Hermes">
+    Find Hermes and toggle it **on**.
+  </Step>
+</Steps>
+
+### Still not working?
+
+Try a different hotkey. Some keys may be captured by the system or other apps before Hermes can detect them.
+
+---
+
+## Screen Recording permission
+
+### Symptoms
+- Vision context doesn't work
+- App detection is inaccurate
+- "Screen Recording access required" message
+
+### Fix
+
+<Steps>
+  <Step title="Open System Settings">
+    Apple menu () → System Settings
+  </Step>
+  <Step title="Go to Screen Recording">
+    Privacy & Security → Screen Recording
+
+    (On newer macOS, this may be called "Screen & System Audio Recording")
+  </Step>
+  <Step title="Enable Hermes">
+    Find Hermes and toggle it **on**.
+  </Step>
+</Steps>
+
+<Note>
+Screen Recording is optional. Hermes works without it, but Vision context won't be available.
+</Note>
+
+---
+
+## Permission was denied by organization
+
+If you're on a work computer, your IT department may restrict permissions.
+
+### Options
+
+1. **Contact IT** — Ask them to allow Hermes
+2. **Use a personal device** — If work computer can't be configured
+3. **Request an exception** — Some organizations allow exceptions for productivity tools
+
+---
+
+## Resetting all permissions
+
+If nothing else works, you can reset Hermes' permissions completely:
+
+<Warning>
+This removes Hermes from all permission lists. You'll need to re-grant everything.
+</Warning>
+
+1. Quit Hermes
+2. Open **Terminal**
+3. Run these commands:
+```bash
+tccutil reset Microphone com.hermes.app
+tccutil reset Accessibility com.hermes.app
+tccutil reset PostEvent com.hermes.app
+tccutil reset ScreenCapture com.hermes.app
+```
+4. Reopen Hermes
+5. Grant permissions when prompted
+
+<Note>
+Replace `com.hermes.app` with the actual bundle ID if different.
+</Note>
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Permissions setup" icon="lock" href="/setup/permissions">
+    Initial permission setup guide.
+  </Card>
+  <Card title="Common issues" icon="circle-exclamation" href="/troubleshooting/common-issues">
+    Other common problems.
+  </Card>
+</CardGroup>

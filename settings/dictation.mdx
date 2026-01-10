@@ -1,0 +1,110 @@
+---
+title: "Dictation Settings"
+description: "Configure language, microphone, audio processing, and text cleanup options."
+---
+
+## Language
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Primary Language** | English | The main language for dictation |
+| **Additional Languages** | None | Secondary languages for auto-detection |
+
+Hermes supports many languages including English, Spanish, French, German, Italian, Portuguese, Dutch, and more.
+
+### Changing your language
+
+1. Go to **Settings → Dictation → Language**
+2. Select your primary language
+3. Optionally add additional languages for multilingual dictation
+
+---
+
+## Microphone
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Microphone Selection** | Auto | Automatically choose the best microphone |
+| **Preferred Mode** | Auto | Prioritize certain microphone types |
+
+### Microphone modes
+
+| Mode | Behavior |
+|------|----------|
+| **Auto** | Hermes picks the best available microphone |
+| **AirPods** | Prefer AirPods when connected |
+| **Headphones** | Prefer any connected headphones |
+| **Built-in** | Always use the Mac's built-in microphone |
+| **Manual** | Use a specific microphone you select |
+
+### Selecting a specific microphone
+
+1. Set Preferred Mode to **Manual**
+2. Choose your microphone from the dropdown
+3. The selected microphone will always be used when available
+
+---
+
+## Audio processing
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Voice Activity Threshold** | 0.1 | Sensitivity to speech detection |
+| **Max Recording Duration** | 5 minutes | Longest allowed dictation |
+| **Auto-stop after silence** | On | Automatically end dictation when you stop speaking |
+| **Mute speakers during dictation** | Off | Silence system audio while recording |
+
+### Voice activity threshold
+
+This controls how sensitive Hermes is to detecting speech:
+
+- **Lower values (0.0–0.3)**: More sensitive, picks up quieter speech
+- **Higher values (0.4–1.0)**: Less sensitive, requires louder speech
+
+If Hermes stops recording too early, lower this value. If it picks up background noise, raise it.
+
+### Auto-stop behavior
+
+When enabled, Hermes automatically stops recording after detecting silence. This is convenient for natural pausing—just stop talking when you're done.
+
+Disable this if you need long pauses mid-dictation (e.g., thinking time during a meeting).
+
+---
+
+## Text processing
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Remove Filler Words** | Off | Remove "um", "uh", "like", etc. |
+| **Code Mode** | Off | Preserve code syntax during dictation |
+
+### Remove filler words
+
+When enabled, common filler words are automatically removed:
+- "um", "uh", "er"
+- "like", "you know", "basically"
+- "so", "actually" (when used as fillers)
+
+<Note>
+AI Formatting also removes filler words. This setting applies an additional cleanup layer before AI processing.
+</Note>
+
+### Code mode
+
+Enable this when dictating code or technical content. Code mode:
+- Preserves technical terms exactly
+- Reduces aggressive punctuation
+- Maintains formatting characters
+
+---
+
+## Related settings
+
+<CardGroup cols={2}>
+  <Card title="AI Formatting Settings" icon="wand-magic-sparkles" href="/settings/ai-formatting">
+    How your text is formatted after dictation.
+  </Card>
+  <Card title="Keyboard Shortcuts" icon="keyboard" href="/settings/keyboard-shortcuts">
+    Configure your dictation hotkey.
+  </Card>
+</CardGroup>

@@ -1,0 +1,216 @@
+---
+title: "AI Calls"
+description: "Create custom AI-powered responses with your own prompts."
+---
+
+## What it does
+
+AI Calls send your input to an AI model with a custom prompt you define. Unlike Hermes' built-in AI formatting, AI Calls give you complete control over the prompt and output.
+
+## AI providers
+
+| Provider | Models | API Key Required |
+|----------|--------|------------------|
+| **Hermes** | GPT-OSS-120B | No (included with subscription) |
+| **OpenAI** | GPT-5, GPT-5 Pro | Yes |
+| **Anthropic** | Claude Sonnet 4.5, Opus 4.5, Haiku 4.5 | Yes |
+| **xAI** | Grok 4, Grok 4.1 Fast | Yes |
+
+---
+
+## Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Provider** | Hermes | Which AI service to use |
+| **Model** | Default for provider | Specific model |
+| **Prompt Template** | Required | Your custom prompt |
+| **Output Handling** | Inject | What to do with the response |
+| **Streaming** | Off | Show response as it generates |
+
+### Advanced settings
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Temperature** | 0.7 | Creativity (0 = focused, 2 = creative) |
+| **Max Tokens** | Model default | Response length limit |
+| **System Prompt** | None | Additional AI instructions |
+| **Use Vision** | Off | Include screenshot for context |
+| **Conversation History** | Off | Remember previous messages |
+
+---
+
+## Output handling
+
+| Option | What happens |
+|--------|--------------|
+| **Inject** | Insert response at cursor |
+| **Clipboard** | Copy response to clipboard |
+| **Notification** | Show as macOS notification |
+| **Popup** | Display in floating bubble |
+| **Popup + Inject** | Show popup and insert text |
+
+You can select multiple options.
+
+---
+
+## Template variables
+
+Use these in your prompt template:
+
+| Variable | Description |
+|----------|-------------|
+| `{transcription}` | What you said (full dictation) |
+| `{remainder}` | Text after the trigger phrase |
+| `{selected_text}` | Currently highlighted text |
+| `{date}` | Current date |
+| `{time}` | Current time |
+| `{app_name}` | Current application name |
+| `{bundle_id}` | App bundle identifier |
+
+---
+
+## Example prompts
+
+### Summarize
+
+**Trigger**: "summarize this"
+**Prompt**:
+```
+Summarize the following text in 3 bullet points:
+
+{selected_text}
+```
+
+### Translate
+
+**Trigger**: "translate to spanish"
+**Prompt**:
+```
+Translate the following to Spanish:
+
+{transcription}
+```
+
+### Explain code
+
+**Trigger**: "explain this code"
+**Prompt**:
+```
+Explain this code simply, as if to a junior developer:
+
+{selected_text}
+```
+
+### Draft email
+
+**Trigger**: "draft email about"
+**Prompt**:
+```
+Write a professional email about the following topic:
+
+{remainder}
+
+Keep it concise and friendly.
+```
+
+### Answer question
+
+**Trigger**: "ask hermes"
+**Prompt**:
+```
+Answer this question helpfully and concisely:
+
+{remainder}
+```
+
+### Fix grammar
+
+**Trigger**: "fix this"
+**Prompt**:
+```
+Fix any grammar, spelling, or punctuation errors in this text. Only return the corrected text, nothing else:
+
+{selected_text}
+```
+
+---
+
+## Creating an AI Call trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase (e.g., "summarize this").
+  </Step>
+  <Step title="Choose matching mode">
+    **Exact** if using selected text, **Prefix** if using voice input.
+  </Step>
+  <Step title="Select AI Call">
+    Choose **AI Call** as the action type.
+  </Step>
+  <Step title="Choose provider and model">
+    Select your AI provider. Add API key if required.
+  </Step>
+  <Step title="Write your prompt">
+    Enter your prompt template using variables.
+  </Step>
+  <Step title="Set output handling">
+    Choose what to do with the response.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Using your own API keys
+
+To use OpenAI, Anthropic, or xAI:
+
+1. Go to **Settings → Integrations**
+2. Enter your API key for the provider
+3. Keys are stored securely and never shared
+
+---
+
+## Vision context
+
+When **Use Vision** is enabled, Hermes includes a screenshot with your prompt. This lets the AI understand what's on your screen.
+
+**Use cases**:
+- "What's wrong with this code?" (AI sees the code)
+- "Summarize this page" (AI sees the content)
+- "Help me fill out this form" (AI sees the form fields)
+
+---
+
+## Tips
+
+- **Be specific in prompts** — Clear instructions get better results
+- **Use system prompts** for persistent instructions (e.g., "Always respond in bullet points")
+- **Test with Hermes AI first** — It's included, no API key needed
+- **Start with low temperature** (0.3–0.5) for factual tasks
+- **Use higher temperature** (0.7–1.0) for creative tasks
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Text Formatting" icon="pen" href="/triggers/types/text-formatting">
+    Built-in edit and reply actions.
+  </Card>
+  <Card title="Variables" icon="code" href="/triggers/variables">
+    All available template variables.
+  </Card>
+  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
+    Chain AI calls with other actions.
+  </Card>
+</CardGroup>

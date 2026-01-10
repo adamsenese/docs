@@ -1,0 +1,139 @@
+---
+title: "Window Actions"
+description: "Move, resize, and manage windows with precise control."
+---
+
+## What it does
+
+Window Actions give you precise control over window positioning. Unlike Window Layout (which uses presets), Window Actions let you specify exact coordinates and sizes.
+
+## Actions
+
+| Action | What it does |
+|--------|--------------|
+| **Move** | Reposition window to specific X,Y coordinates |
+| **Resize** | Change window to specific width and height |
+| **Minimize** | Minimize window to dock |
+| **Maximize** | Maximize window to fill screen |
+| **Fullscreen** | Toggle macOS fullscreen mode |
+| **Center** | Center window on screen |
+
+---
+
+## Configuration
+
+| Setting | Required For | Description |
+|---------|--------------|-------------|
+| **Action** | All | Which action to perform |
+| **Target** | All | Frontmost window or specific app |
+| **Position (X, Y)** | Move | Pixel coordinates from top-left |
+| **Size (W × H)** | Resize | Width and height in pixels |
+| **Screen Index** | Move, Resize | Which display (0 = primary) |
+
+---
+
+## Target options
+
+### Frontmost
+
+Applies the action to whatever window is currently active.
+
+### Specific App
+
+Applies the action to a specific application's window. You specify the app by its bundle ID (e.g., `com.apple.Safari`).
+
+---
+
+## Examples
+
+### Move window to corner
+
+**Action**: Move
+**Position**: X: 0, Y: 0
+**Result**: Window moves to top-left corner
+
+### Resize to specific size
+
+**Action**: Resize
+**Size**: Width: 1200, Height: 800
+**Result**: Window becomes 1200×800 pixels
+
+### Minimize current window
+
+**Action**: Minimize
+**Target**: Frontmost
+**Result**: Active window minimizes to dock
+
+### Center specific app
+
+**Action**: Center
+**Target**: Specific App (Safari)
+**Result**: Safari window centers on screen
+
+---
+
+## Creating a window action trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase (e.g., "minimize window").
+  </Step>
+  <Step title="Choose matching mode">
+    Select **Exact** for simple actions.
+  </Step>
+  <Step title="Select Window Action">
+    Choose **Window Action** as the action type.
+  </Step>
+  <Step title="Configure the action">
+    - Select the action (Move, Resize, etc.)
+    - Set target (Frontmost or Specific App)
+    - Enter coordinates/size if needed
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Multi-monitor
+
+Use the **Screen Index** setting to target specific monitors:
+
+| Index | Monitor |
+|-------|---------|
+| 0 | Primary display |
+| 1 | Secondary display |
+| 2 | Third display |
+
+---
+
+## When to use Window Actions vs Window Layout
+
+| Use Case | Recommendation |
+|----------|----------------|
+| Snap to half/quarter | Window Layout |
+| Maximize or fullscreen | Either works |
+| Specific pixel position | Window Actions |
+| Specific pixel size | Window Actions |
+| Minimize | Window Actions |
+| Quick presets | Window Layout |
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Window Layout" icon="table-cells-large" href="/triggers/types/window-layout">
+    Preset window positions.
+  </Card>
+  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
+    Combine multiple window actions.
+  </Card>
+</CardGroup>

@@ -1,0 +1,1709 @@
+# Hermes Documentation Plan
+
+> **Documentation Philosophy**: Following the [Diátaxis framework](https://diataxis.fr/) - separating tutorials (learning), how-to guides (tasks), reference (information), and explanation (understanding).
+
+> **Tone**: User-facing, usage-focused documentation. Explain *how to use* features, not *how they work* internally. The only exception is Triggers (especially Terminal, AI Calls, Compound Actions) which can be more technical for power users.
+
+---
+
+## Site Structure Overview
+
+```
+Guides (Tab 1)
+├── Getting Started
+│   ├── Introduction
+│   ├── Quickstart
+│   ├── Permissions
+│   └── Your First Dictation
+├── Core Features
+│   ├── Dictation
+│   ├── Keyboard Shortcuts
+│   ├── AI Formatting
+│   ├── Hermes Reply
+│   ├── Hermes Edit
+│   ├── Hermes Chat
+│   └── Notes
+├── Settings (NEW - Comprehensive)
+│   ├── Settings Overview
+│   ├── Dictation Settings
+│   ├── AI Formatting Settings
+│   ├── Interface Settings
+│   ├── Privacy Settings
+│   └── Keyboard Shortcuts Settings
+├── Customization
+│   ├── Formatting Modes
+│   └── Dictionary
+├── Triggers (EXPANDED - Deep Nesting)
+│   ├── What Are Triggers?
+│   ├── Creating Your First Trigger
+│   ├── Matching Modes
+│   ├── Trigger Types
+│   │   ├── Text Expansion
+│   │   ├── Web Search
+│   │   ├── App Launcher
+│   │   ├── Window Layout
+│   │   ├── Window Actions
+│   │   ├── Keyboard Shortcuts
+│   │   ├── Terminal Commands
+│   │   ├── Siri Shortcuts
+│   │   ├── AI Calls
+│   │   ├── Text Formatting
+│   │   └── Compound Actions
+│   ├── Variables & Templates
+│   └── Default Triggers
+├── Account & Teams
+│   ├── Plans & Pricing
+│   ├── Billing
+│   └── Teams
+└── Troubleshooting
+    ├── Common Issues
+    ├── Permissions Issues
+    └── Audio Issues
+
+API Reference (Tab 2)
+├── Overview
+└── Integrations
+```
+
+---
+
+## Part 1: Getting Started
+
+### 1.1 Introduction (`index.mdx`)
+**Purpose**: Welcome users, explain what Hermes is, build excitement
+
+**Content**:
+- Hero section: "Dictate smarter, not harder"
+- What is Hermes? Voice dictation that understands context
+- Key benefits:
+  - Speaks your language (removes filler words, formats naturally)
+  - Knows where you are (email vs Slack vs code)
+  - Automates repetitive tasks (triggers)
+  - Works offline (local processing)
+- Quick visual showing before/after of raw speech → formatted text
+- Cards linking to: Quickstart, Features, Triggers
+
+**Links to**: Quickstart, Features overview
+
+---
+
+### 1.2 Quickstart (`quickstart.mdx`)
+**Purpose**: Get users from download to first successful dictation in 5 minutes
+
+**Content**:
+1. **Download & Install** (30 seconds)
+   - Download link
+   - Drag to Applications
+   - First launch
+
+2. **Grant Permissions** (1 minute)
+   - Visual guide for each permission
+   - Why each is needed (plain language)
+
+3. **Set Your Hotkey** (30 seconds)
+   - Default: Fn key (explain why it's good)
+   - How to change it
+
+4. **Speak Your First Sentence** (1 minute)
+   - Press hotkey
+   - Say something natural: "Hey, just wanted to follow up on our meeting earlier. Let me know when you're free."
+   - Watch it transform
+
+5. **What's Next?**
+   - Cards: Explore AI formatting, Set up triggers, Customize dictionary
+
+**Links to**: Permissions, First Dictation, AI Formatting
+
+---
+
+### 1.3 Permissions (`setup/permissions.mdx`)
+**Purpose**: Explain each macOS permission in plain language
+
+**Content**:
+
+| Permission | What It Does | How to Grant |
+|------------|--------------|--------------|
+| **Microphone** | Lets Hermes hear your voice | System Settings → Privacy → Microphone |
+| **Accessibility** | Lets Hermes type into apps for you | System Settings → Privacy → Accessibility |
+| **Input Monitoring** | Lets Hermes detect your hotkey anywhere | System Settings → Privacy → Input Monitoring |
+| **Screen Recording** (Optional) | Lets Hermes see what app you're using for smarter formatting | System Settings → Privacy → Screen Recording |
+
+For each:
+- Step-by-step screenshots
+- "What happens if I don't grant this?"
+- Troubleshooting if permission isn't working
+
+**Links to**: Troubleshooting/Permissions, Settings
+
+---
+
+### 1.4 Your First Dictation (`setup/first-dictation.mdx`)
+**Purpose**: Tutorial walking through the complete dictation experience
+
+**Content**:
+1. Choose where to dictate (email, notes, anywhere)
+2. Press your hotkey
+3. The Hermes bar appears
+4. Speak naturally - tips:
+   - Don't say punctuation (Hermes adds it)
+   - Pause when you're done
+   - Say "um" or "like" freely (they're removed)
+5. Watch the transcription appear
+6. See AI formatting in action
+7. Text is inserted
+8. View your dictation history
+
+**Links to**: Dictation, AI Formatting, Notes
+
+---
+
+## Part 2: Core Features
+
+### 2.1 Dictation (`features/dictation.mdx`)
+**Purpose**: Comprehensive guide to the dictation experience
+
+**Content**:
+- How dictation works (visual flow)
+- The Hermes bar explained
+- Speaking tips:
+  - Pace and clarity
+  - Natural vs robotic speech
+  - When to pause
+- Double-tap for long dictations
+- Stopping dictation (hotkey release, silence, manual)
+- Viewing your history
+- Supported languages (link to full list)
+
+**Links to**: Hotkeys, AI Formatting, Notes
+
+---
+
+### 2.2 Keyboard Shortcuts (`features/hotkeys.mdx`)
+**Purpose**: All keyboard shortcuts in one place
+
+**Content**:
+| Shortcut | Default | What It Does |
+|----------|---------|--------------|
+| Start Dictation | Fn | Begin voice capture |
+| Stop Dictation | Release Fn | End capture and process |
+| Quick Format | ⌘⇧F | Format selected text with AI |
+| Show Hermes | ⌘⌥H | Open the main window |
+
+- Customizing shortcuts
+- Double-tap behavior (hold for extended dictation)
+- Modifier keys explained
+
+**Links to**: Settings/Keyboard Shortcuts
+
+---
+
+### 2.3 AI Formatting (`features/ai-formatting.mdx`)
+**Purpose**: Explain how Hermes understands and formats your speech
+
+**Content**:
+- What AI formatting does:
+  - Adds punctuation and capitalization
+  - Removes filler words ("um", "uh", "like")
+  - Converts numbers ("twenty three" → "23")
+  - Applies context-appropriate style
+- How context detection works:
+  - Email gets formal formatting
+  - Slack gets casual formatting
+  - Code comments preserve syntax
+- The formatting pipeline (visual):
+  1. Speech → Text (transcription)
+  2. Cleanup (fillers, numbers)
+  3. Context detection (what app?)
+  4. AI formatting (style application)
+  5. Final text inserted
+- When formatting doesn't apply (and why)
+- Daily limits and usage
+
+**Links to**: Formatting Modes, Settings/AI Formatting
+
+---
+
+### 2.4 Hermes Reply (`features/hermes-reply.mdx`)
+**Purpose**: Using voice to reply to messages and emails
+
+**Content**:
+- What is Hermes Reply?
+- How to use it:
+  1. Select text you want to reply to
+  2. Activate Hermes Reply (explain how)
+  3. Speak your response intent
+  4. Get a formatted reply
+- Examples:
+  - Replying to an email
+  - Responding in Slack
+  - Commenting on a document
+- Tips for better replies
+
+**Links to**: AI Formatting, Hermes Edit
+
+---
+
+### 2.5 Hermes Edit (`features/hermes-edit.mdx`)
+**Purpose**: Voice-powered text editing
+
+**Content**:
+- What is Hermes Edit?
+- How to use it:
+  1. Select text to modify
+  2. Activate Hermes Edit
+  3. Describe changes: "make this shorter" or "fix the grammar"
+  4. Review the result
+- Common edit commands:
+  - "Make this more formal"
+  - "Shorten this"
+  - "Fix any errors"
+  - "Rewrite this as bullet points"
+
+**Links to**: Hermes Reply, AI Formatting
+
+---
+
+### 2.6 Hermes Chat (`features/hermes-chat.mdx`)
+**Purpose**: Conversational AI interactions
+
+**Content**:
+- What is Hermes Chat?
+- Starting a conversation
+- Use cases:
+  - Brainstorming
+  - Quick questions
+  - Research assistance
+- Conversation context (how it remembers)
+
+**Links to**: AI Calls trigger (for custom AI)
+
+---
+
+### 2.7 Notes (`features/notes.mdx`)
+**Purpose**: Capturing and organizing dictations
+
+**Content**:
+- What are Notes?
+- Saving a dictation as a note
+- Viewing and editing notes
+- Organizing notes
+- Searching past dictations
+
+**Links to**: Dictation
+
+---
+
+## Part 3: Settings (NEW - Comprehensive Section)
+
+### 3.1 Settings Overview (`settings/overview.mdx`)
+**Purpose**: Map of all settings and how they relate
+
+**Content**:
+
+```
+Settings Architecture
+┌─────────────────────────────────────────────────────────────┐
+│                        SETTINGS                             │
+├─────────────┬─────────────┬─────────────┬──────────────────┤
+│  Dictation  │     AI      │  Interface  │     Privacy      │
+│             │ Formatting  │             │                  │
+├─────────────┼─────────────┼─────────────┼──────────────────┤
+│ • Language  │ • Modes     │ • Theme     │ • Cloud Sync     │
+│ • Engine    │ • Habits    │ • Bar pos   │ • Analytics      │
+│ • Audio     │ • Vision    │ • Menus     │ • History        │
+│ • Mic       │ • Local AI  │ • Fonts     │ • Crash reports  │
+└─────────────┴─────────────┴─────────────┴──────────────────┘
+                         │
+              ┌──────────┴──────────┐
+              │  Keyboard Shortcuts │
+              │  (Global hotkeys)   │
+              └─────────────────────┘
+```
+
+**How settings affect each other**:
+- Privacy Mode ON → Disables Cloud Sync, Analytics, Crash Reports
+- Vision ON → Enables smarter AI Formatting
+- Local AI ON → Reduces cloud usage but may be slower
+
+Cards linking to each settings category.
+
+**Links to**: All settings pages
+
+---
+
+### 3.2 Dictation Settings (`settings/dictation.mdx`)
+**Purpose**: All speech and transcription settings
+
+**Content**:
+
+#### Language
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Primary Language | English | Main language for dictation |
+| Additional Languages | None | Secondary languages (auto-detect) |
+
+#### Audio Processing
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Voice Activity Threshold | 0.1 | Sensitivity to speech (0=sensitive, 1=strict) |
+| Max Recording Duration | 5 minutes | Longest single dictation |
+| Auto-submit after silence | On | End dictation when you stop speaking |
+| Mute speakers during dictation | Off | Silence system audio while recording |
+
+#### Microphone
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Microphone Selection | Auto | Auto-detect or choose specific mic |
+| Preferred Mode | Auto | Prioritize: AirPods, headphones, built-in |
+
+#### Text Processing
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Remove Filler Words | Off | Remove "um", "uh", "like" |
+| Code Mode | Off | Preserve code syntax (for developers) |
+
+**Relationships**:
+- Higher Voice Activity Threshold = Less sensitive to quiet speech
+- Code Mode disables some AI formatting rules
+
+**Links to**: AI Formatting Settings, Keyboard Shortcuts
+
+---
+
+### 3.3 AI Formatting Settings (`settings/ai-formatting.mdx`)
+**Purpose**: Control how AI processes your text
+
+**Content**:
+
+#### Core Settings
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Enable AI Formatting | On | Apply AI to your dictation |
+| Smart Punctuation | On | Auto-add periods, commas, etc. |
+| Auto-Detect App | On | Detect app context automatically |
+
+#### Vision Context
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Enable Vision | Off | Let Hermes see your screen for context |
+| Daily Limit | 200 | Vision uses per day |
+
+> **Privacy Note**: Vision is opt-in. When enabled, Hermes takes a screenshot to understand context. Screenshots are processed and immediately discarded.
+
+#### Local AI
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Use Local AI | Off | Process text on-device |
+| Local Model | qwen-2.5-vl-7b | Model for local processing |
+
+> **Trade-off**: Local AI = more privacy, but slower and uses more battery.
+
+#### Talking Habits
+| Habit | Best For | Example |
+|-------|----------|---------|
+| Casual | Friends, Slack | "hey, sounds good! let me know" |
+| Semi-casual | Notes, general | "Hey, that sounds good. Let me know." |
+| Formal | Email, business | "Hello, that sounds agreeable. Please let me know." |
+
+**Relationships**:
+- Vision + AI Formatting = Best context detection
+- Local AI → Vision not available
+- Talking Habits are per-mode (see Formatting Modes)
+
+**Links to**: Formatting Modes, Privacy Settings
+
+---
+
+### 3.4 Interface Settings (`settings/interface.mdx`)
+**Purpose**: Customize the visual experience
+
+**Content**:
+
+#### Appearance
+| Setting | Default | Options |
+|---------|---------|---------|
+| Theme | Auto | Light, Dark, Auto (follow system) |
+| Font Size | Medium | Small, Medium, Large |
+| Animations | On | Enable UI animations |
+| Compact Mode | Off | Denser UI layout |
+
+#### Hermes Bar
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Position | Bottom Middle | Where the bar appears during dictation |
+| Follow Active Screen | On | Bar appears on the screen you're working on |
+| Hide When Inactive | Off | Hide bar when not dictating |
+
+**Positions**: Top Left, Top Middle, Top Right, Bottom Left, Bottom Middle, Bottom Right
+
+#### Menu Bar
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Show Menu Bar Icon | On | Show Hermes in the menu bar |
+
+#### AI Widget
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Corner Position | Bottom Right | Where chat bubbles appear |
+
+**Links to**: Settings Overview
+
+---
+
+### 3.5 Privacy Settings (`settings/privacy.mdx`)
+**Purpose**: Control your data
+
+**Content**:
+
+#### Privacy Mode
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Privacy Mode | Off | **Master switch** - blocks all cloud features |
+
+> **When Privacy Mode is ON**: No cloud sync, no analytics, no crash reports. Your data stays entirely on your Mac.
+
+#### Individual Controls
+| Setting | Default | When Privacy Mode On |
+|---------|---------|---------------------|
+| Cloud Sync | On | Forced Off |
+| Analytics | On | Forced Off |
+| Crash Reports | On | Forced Off |
+| Auto-delete History | Never | Unaffected |
+
+#### History Retention
+| Setting | Options |
+|---------|---------|
+| Auto-delete after | Never, 7 days, 30 days, 90 days |
+
+**Links to**: Settings Overview, AI Formatting (Vision)
+
+---
+
+### 3.6 Keyboard Shortcuts Settings (`settings/keyboard-shortcuts.mdx`)
+**Purpose**: Customize all hotkeys
+
+**Content**:
+
+#### Available Shortcuts
+| Action | Default | Customizable |
+|--------|---------|--------------|
+| Start/Stop Dictation | Fn | Yes |
+| Quick Format | ⌘⇧F | Yes |
+| Show Hermes | ⌘⌥H | Yes |
+
+#### Supported Keys
+- **Modifiers**: Command (⌘), Option (⌥), Control (⌃), Shift (⇧)
+- **Special**: Function (Fn), Space, Enter, Tab, Escape
+- **Letters**: A-Z
+- **Numbers**: 0-9
+- **Function Keys**: F1-F12
+
+#### Tips
+- Fn key alone is popular (no modifiers needed)
+- Avoid system shortcuts (⌘Q, ⌘W)
+- Test your shortcut doesn't conflict with other apps
+
+**Links to**: Hotkeys feature page
+
+---
+
+## Part 4: Customization
+
+### 4.1 Formatting Modes (`customization/formatting-modes.mdx`)
+**Purpose**: App-specific formatting rules
+
+**Content**:
+
+#### What Are Formatting Modes?
+Modes let you customize how Hermes formats text based on which app you're using.
+
+#### Built-in Modes
+
+| Mode | Apps | Talking Habit | What It Does |
+|------|------|---------------|--------------|
+| **Messaging** | Slack, Discord, Teams, iMessage, WhatsApp | Casual | Friendly, lowercase starts OK |
+| **Email** | Mail, Gmail, Outlook | Formal | Professional structure |
+| **Coding** | Xcode, VS Code, Cursor, Terminal, GitHub | Casual | Preserves syntax, minimal changes |
+| **Writing** | Pages, Word, Notes, Notion, Obsidian | Semi-casual | Clear structure |
+| **AI Assistants** | ChatGPT, Claude, Grok | Casual | Conversational |
+| **Disabled** | (You choose) | None | No formatting at all |
+
+#### Creating a Custom Mode
+1. Go to Settings → AI Formatting → Modes
+2. Click "Add Mode"
+3. Name your mode
+4. Add apps (by name) or websites (by URL)
+5. Choose talking habit
+6. Add custom instructions (optional)
+
+#### Custom Instructions
+You can add specific rules like:
+- "Always expand contractions"
+- "Use British spelling"
+- "Never use exclamation marks"
+- "Always start with a greeting"
+
+#### Web App Support
+Modes work with web apps too. Supported URLs include:
+- `slack.com`, `discord.com`, `teams.microsoft.com`
+- `mail.google.com`, `outlook.live.com`
+- `notion.so`, `docs.google.com`
+- `github.com`, `chat.openai.com`, `claude.ai`
+
+**Links to**: AI Formatting Settings, Dictionary
+
+---
+
+### 4.2 Dictionary (`customization/dictionary.mdx`)
+**Purpose**: Teaching Hermes your vocabulary
+
+**Content**:
+
+#### Why Use the Dictionary?
+Hermes might mishear names, technical terms, or unique words. The dictionary fixes this.
+
+#### Adding Words
+1. Go to Dictionary
+2. Click "Add Word"
+3. Enter:
+   - **What you say**: How you pronounce it
+   - **What you want**: The correct spelling
+
+#### Examples
+| You Say | You Get |
+|---------|---------|
+| "decenice eight" | dsenese8@gmail.com |
+| "kubernetes" | Kubernetes |
+| "Reakt" | React |
+| "my company name" | Acme Corp |
+
+#### Recording Pronunciations
+For tricky words:
+1. Click the microphone icon
+2. Say the word
+3. Hermes learns your pronunciation
+
+#### Syncing
+Your dictionary syncs across devices automatically (unless Privacy Mode is on).
+
+**Links to**: Dictation, AI Formatting
+
+---
+
+## Part 5: Triggers (EXPANDED - Technical Section)
+
+> **Note**: This section is more technical than others. Triggers are a power-user feature for automation.
+
+### 5.1 What Are Triggers? (`triggers/overview.mdx`)
+**Purpose**: Introduction to the trigger system
+
+**Content**:
+
+#### The Concept
+Triggers let you automate actions with your voice. When Hermes hears a specific phrase, it performs an action.
+
+```
+You say: "search google for best coffee shops nearby"
+Trigger: "search google for"
+Action: Opens Google search with "best coffee shops nearby"
+```
+
+#### Why Use Triggers?
+- **Speed**: Actions happen instantly
+- **Hands-free**: No clicking or typing
+- **Consistency**: Same phrase, same result
+- **Power**: Chain complex workflows together
+
+#### Trigger Anatomy
+
+```
+┌─────────────────────────────────────────────┐
+│                  TRIGGER                    │
+├─────────────────────────────────────────────┤
+│  Trigger Phrase: "window left"              │
+│  Matching Mode:  Prefix                     │
+│  Action Type:    Window Layout              │
+│  Action Config:  Left Half                  │
+│  Enabled:        Yes                        │
+└─────────────────────────────────────────────┘
+```
+
+#### Trigger Types Overview
+
+| Type | What It Does | Complexity |
+|------|--------------|------------|
+| Text Expansion | Replace phrase with text | Simple |
+| Web Search | Search the web | Simple |
+| App Launcher | Open applications | Simple |
+| Window Layout | Snap windows to positions | Simple |
+| Window Actions | Move/resize windows | Medium |
+| Keyboard Shortcuts | Simulate key presses | Medium |
+| Terminal Commands | Run shell commands | Advanced |
+| Siri Shortcuts | Run Shortcuts app | Medium |
+| AI Calls | Custom AI responses | Advanced |
+| Text Formatting | Edit/reply to text | Medium |
+| Compound Actions | Chain multiple actions | Advanced |
+
+**Links to**: Creating Your First Trigger, Matching Modes, all trigger type pages
+
+---
+
+### 5.2 Creating Your First Trigger (`triggers/creating-triggers.mdx`)
+**Purpose**: Step-by-step tutorial
+
+**Content**:
+
+#### Example: Create a Web Search Trigger
+
+1. **Open Triggers**
+   - Go to Settings → Triggers
+   - Click "New Trigger"
+
+2. **Set the Phrase**
+   - Enter: `search google for`
+   - This is what you'll say
+
+3. **Choose Matching Mode**
+   - Select: `Prefix`
+   - Your search query comes after the phrase
+
+4. **Select Action Type**
+   - Choose: `Web Search`
+
+5. **Configure the Action**
+   - Search Engine: Google
+   - Browser: Default
+
+6. **Test It**
+   - Say: "search google for best restaurants"
+   - Google opens with your search
+
+#### Tips for Good Triggers
+- Keep phrases short but unique
+- Avoid phrases you use in normal speech
+- Start with simple actions, then advance
+
+**Links to**: Matching Modes, Web Search trigger
+
+---
+
+### 5.3 Matching Modes (`triggers/matching-modes.mdx`)
+**Purpose**: Explain how trigger phrases are matched
+
+**Content**:
+
+#### Three Matching Modes
+
+| Mode | Matches When | Example Phrase | Example Speech | Match? |
+|------|--------------|----------------|----------------|--------|
+| **Prefix** | Phrase is at the start | "search for" | "search for pizza" | ✅ |
+| **Exact** | Phrase is the entire speech | "open mail" | "open mail" | ✅ |
+| **Contains** | Phrase appears anywhere | "please" | "could you please help" | ✅ |
+
+#### Prefix Match (Most Common)
+Best for: Commands with variable input
+
+```
+Phrase: "search google for"
+Speech: "search google for best coffee nearby"
+                          └─── remainder ───┘
+```
+
+The remainder ("best coffee nearby") becomes available as `{remainder}` in your action.
+
+#### Exact Match
+Best for: Single-action commands
+
+```
+Phrase: "open slack"
+Speech: "open slack"  ✅
+Speech: "open slack please"  ❌ (doesn't match)
+```
+
+#### Contains Match
+Best for: Catching phrases anywhere
+
+```
+Phrase: "reminder"
+Speech: "set a reminder for tomorrow"  ✅
+Speech: "don't forget the reminder"  ✅
+```
+
+#### How Matching Works (Technical)
+
+Hermes uses a progressive matching strategy:
+
+1. **Exact**: Normalized text equals normalized trigger
+2. **Smart**: Handles plurals ("windows" → "window")
+3. **Fuzzy**: Allows small typos (Levenshtein distance ≤ 2)
+4. **Phonetic**: Matches homophones ("write" ≈ "right")
+
+**Normalization**:
+- Converts to lowercase
+- Removes punctuation
+- Collapses spaces
+- Replaces hyphens with spaces
+
+**Links to**: Overview, Creating Triggers
+
+---
+
+### 5.4 Text Expansion (`triggers/types/text-expansion.mdx`)
+**Purpose**: Simple text replacement
+
+**Content**:
+
+#### What It Does
+Replaces your trigger phrase with predefined text.
+
+#### Configuration
+
+| Setting | Description |
+|---------|-------------|
+| Output Text | The text to insert |
+
+#### Examples
+
+| Phrase | Output |
+|--------|--------|
+| "my email" | john.smith@company.com |
+| "my address" | 123 Main St, City, State 12345 |
+| "regards" | Best regards,<br>John Smith |
+| "meeting link" | https://zoom.us/j/123456789 |
+
+#### Tips
+- Great for signatures, addresses, common phrases
+- Use for text you type repeatedly
+- Can include multiple lines
+
+**Links to**: Variables & Templates
+
+---
+
+### 5.5 Web Search (`triggers/types/web-search.mdx`)
+**Purpose**: Voice-activated web searches
+
+**Content**:
+
+#### What It Does
+Opens a search engine with your query.
+
+#### Configuration
+
+| Setting | Default | Options |
+|---------|---------|---------|
+| Search Engine | Google | Google, DuckDuckGo, Bing, Custom |
+| Browser | Default | Default, Safari, Chrome, Firefox |
+| Query Handling | Passthrough | Passthrough, Template |
+| Open in New Tab | On | On/Off |
+| Focus Browser | On | On/Off |
+
+#### Search Engines
+
+| Engine | URL Pattern |
+|--------|-------------|
+| Google | `google.com/search?q={query}` |
+| DuckDuckGo | `duckduckgo.com/?q={query}` |
+| Bing | `bing.com/search?q={query}` |
+| Custom | Your URL with `{query}` placeholder |
+
+#### Custom Search Examples
+
+| Site | URL Template |
+|------|--------------|
+| YouTube | `youtube.com/results?search_query={query}` |
+| Amazon | `amazon.com/s?k={query}` |
+| Stack Overflow | `stackoverflow.com/search?q={query}` |
+| Wikipedia | `en.wikipedia.org/wiki/Special:Search?search={query}` |
+
+#### Query Handling Modes
+
+**Passthrough**: Uses your speech as-is
+```
+Speech: "search youtube for coding tutorials"
+Query: "coding tutorials"
+```
+
+**Template**: Apply pretext/posttext
+```
+Pretext: "site:reddit.com "
+Speech: "search reddit for best keyboards"
+Query: "site:reddit.com best keyboards"
+```
+
+#### Variables
+- `{query}` - The search query
+- `{transcription}` - Full dictation
+
+**Links to**: Variables & Templates, Custom URLs
+
+---
+
+### 5.6 App Launcher (`triggers/types/app-launcher.mdx`)
+**Purpose**: Open applications by voice
+
+**Content**:
+
+#### What It Does
+Launches any application on your Mac.
+
+#### Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Activate on Launch | On | Bring app to foreground |
+| Hide Others | Off | Hide other apps |
+| Allow Partial Matches | On | "saf" matches Safari |
+
+#### How App Matching Works
+
+Hermes finds your app using:
+1. **Exact match**: "Safari" → Safari
+2. **Partial match**: "saf" → Safari (if enabled)
+3. **Common names**: "Chrome" → Google Chrome
+4. **Fuzzy matching**: "Safar" → Safari
+
+#### Common Corrections
+Hermes automatically handles:
+- "eye term" → iTerm
+- "vee ess code" → VS Code
+- "ex code" → Xcode
+
+#### Examples
+
+| Phrase | Opens |
+|--------|-------|
+| "open safari" | Safari |
+| "launch slack" | Slack |
+| "start vscode" | Visual Studio Code |
+| "open finder" | Finder |
+
+**Links to**: Overview
+
+---
+
+### 5.7 Window Layout (`triggers/types/window-layout.mdx`)
+**Purpose**: Snap windows to predefined positions
+
+**Content**:
+
+#### What It Does
+Instantly positions your current window to a screen region.
+
+#### Available Layouts
+
+| Layout | Position | Size |
+|--------|----------|------|
+| Left Half | Left edge | 50% width, 100% height |
+| Right Half | Right edge | 50% width, 100% height |
+| Top Half | Top edge | 100% width, 50% height |
+| Bottom Half | Bottom edge | 100% width, 50% height |
+| Top Left Quarter | Top-left corner | 50% × 50% |
+| Top Right Quarter | Top-right corner | 50% × 50% |
+| Bottom Left Quarter | Bottom-left corner | 50% × 50% |
+| Bottom Right Quarter | Bottom-right corner | 50% × 50% |
+| Center | Screen center | Current size |
+| Maximize | Fill screen | Respects menu bar |
+| Fullscreen | True fullscreen | macOS fullscreen mode |
+
+#### Visual Guide
+
+```
+┌─────────┬─────────┐  ┌───────────────────┐
+│ Top     │ Top     │  │     Top Half      │
+│ Left    │ Right   │  ├───────────────────┤
+├─────────┼─────────┤  │    Bottom Half    │
+│ Bottom  │ Bottom  │  └───────────────────┘
+│ Left    │ Right   │
+└─────────┴─────────┘
+
+┌─────────┬─────────┐  ┌───────────────────┐
+│         │         │  │                   │
+│  Left   │  Right  │  │     Maximize      │
+│  Half   │  Half   │  │                   │
+│         │         │  │                   │
+└─────────┴─────────┘  └───────────────────┘
+```
+
+#### Multi-Monitor Support
+Window layouts detect which screen your window is on and snap to that screen.
+
+#### Example Triggers
+
+| Phrase | Layout |
+|--------|--------|
+| "window left" | Left Half |
+| "window right" | Right Half |
+| "snap top left" | Top Left Quarter |
+| "maximize" | Maximize |
+| "fullscreen" | Fullscreen |
+
+**Links to**: Window Actions
+
+---
+
+### 5.8 Window Actions (`triggers/types/window-actions.mdx`)
+**Purpose**: Custom window manipulation
+
+**Content**:
+
+#### What It Does
+Move, resize, or manage windows with precise control.
+
+#### Actions
+
+| Action | What It Does |
+|--------|--------------|
+| Move | Reposition window to X,Y coordinates |
+| Resize | Change window to specific width/height |
+| Minimize | Minimize to dock |
+| Maximize | Fill available screen |
+| Fullscreen | Enter macOS fullscreen |
+| Center | Center on screen |
+
+#### Configuration
+
+| Setting | Required For | Description |
+|---------|--------------|-------------|
+| Target | All | Frontmost window or specific app |
+| Position (X,Y) | Move | Pixel coordinates from top-left |
+| Size (W×H) | Resize | Width and height in pixels |
+| Screen Index | Move/Resize | Which display (0 = primary) |
+
+#### Target Options
+- **Frontmost**: Currently active window
+- **Specific App**: Window of a particular application (by bundle ID)
+
+#### Examples
+
+```
+Move to position (100, 100):
+  Action: Move
+  Position: 100, 100
+
+Resize to 800×600:
+  Action: Resize
+  Size: 800, 600
+
+Minimize current window:
+  Action: Minimize
+```
+
+**Links to**: Window Layout
+
+---
+
+### 5.9 Keyboard Shortcuts (`triggers/types/keyboard-shortcuts.mdx`)
+**Purpose**: Simulate keyboard input
+
+**Content**:
+
+#### What It Does
+Sends keyboard shortcuts to apps, as if you pressed the keys.
+
+#### Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Key Sequence | Required | List of key presses |
+| Target App | None | Focus specific app first |
+| Target URL | None | Open URL first |
+| URL Load Delay | 1000ms | Wait after opening URL |
+| Repeat Count | 1 | Times to repeat sequence |
+| Delay Between Repeats | 100ms | Pause between repeats |
+
+#### Modifier Keys
+- ⌘ Command
+- ⌥ Option
+- ⌃ Control
+- ⇧ Shift
+- Fn Function
+
+#### Supported Keys
+- Letters: A-Z
+- Numbers: 0-9
+- Function: F1-F20
+- Special: Return, Tab, Space, Delete, Escape
+- Navigation: Home, End, Page Up, Page Down
+- Arrows: ←↑↓→
+- Punctuation: All standard symbols
+
+#### Built-in Presets
+
+| Preset | Keys | Use |
+|--------|------|-----|
+| Copy | ⌘C | Copy selection |
+| Paste | ⌘V | Paste clipboard |
+| Cut | ⌘X | Cut selection |
+| Undo | ⌘Z | Undo last action |
+| Redo | ⌘⇧Z | Redo |
+| Save | ⌘S | Save document |
+| Select All | ⌘A | Select everything |
+| Find | ⌘F | Open find dialog |
+| New Tab | ⌘T | Open new tab |
+| Close Tab | ⌘W | Close current tab |
+| Quit | ⌘Q | Quit application |
+| Command Palette | ⌘⇧P | VS Code/editors |
+
+#### Examples
+
+**Copy and paste in sequence**:
+```
+Keys: ⌘C, wait 100ms, ⌘V
+```
+
+**Open Spotlight and search**:
+```
+Keys: ⌘Space
+Target: None
+(Then speak your search via another trigger)
+```
+
+**Repeat key 5 times**:
+```
+Keys: ↓
+Repeat: 5
+Delay: 50ms
+```
+
+**Links to**: Terminal Commands
+
+---
+
+### 5.10 Terminal Commands (`triggers/types/terminal.mdx`)
+**Purpose**: Run shell commands by voice
+
+**Content**:
+
+#### What It Does
+Executes terminal commands, either silently or visually.
+
+#### Configuration
+
+| Setting | Default | Options |
+|---------|---------|---------|
+| Commands | Required | List of shell commands |
+| Execution Mode | Background | Background (silent), Visual (shows terminal) |
+| Terminal App | System Default | Terminal, iTerm, Warp, etc. |
+| Working Directory | None | Directory to run in |
+| Close Tab When Complete | Off | Auto-close terminal tab |
+| Close Tab Delay | 2000ms | Wait before closing |
+
+#### Execution Modes
+
+**Background**: Silent execution
+- No terminal window opens
+- Output available via variable
+- Best for quick commands
+
+**Visual**: Shows in terminal
+- Opens terminal app
+- You see the command run
+- Best for interactive commands
+
+#### Command Structure
+
+Each command has:
+- `command`: The shell command
+- `delayAfterMs`: Wait after running (default: 0)
+
+#### Environment Variables
+
+Your commands have access to:
+- `$HERMES_INPUT` - Your transcription
+- `$HERMES_SCREENSHOT` - Path to screenshot (if captured)
+
+#### Screenshot Options
+
+| Option | Resolution | Format | Use Case |
+|--------|------------|--------|----------|
+| None | - | - | No screenshot |
+| Low Quality | 1280×720 | JPEG | Vision AI |
+| High Quality | Full | PNG | Analysis |
+
+#### Examples
+
+**Open project in VS Code**:
+```bash
+cd ~/projects/myapp && code .
+```
+
+**Git status**:
+```bash
+git status
+```
+
+**Create and open file**:
+```bash
+touch ~/Desktop/notes.txt && open ~/Desktop/notes.txt
+```
+
+**Run with input**:
+```bash
+echo "$HERMES_INPUT" | pbcopy
+```
+
+#### Security Warnings
+
+Hermes warns about potentially dangerous commands:
+- `rm -rf` - Recursive delete
+- `sudo` - Elevated privileges
+- `curl | sh` - Remote script execution
+- `shutdown`, `reboot` - System commands
+
+> **Caution**: Terminal commands run with your user permissions. Be careful with destructive commands.
+
+**Links to**: Keyboard Shortcuts, Compound Actions
+
+---
+
+### 5.11 Siri Shortcuts (`triggers/types/siri-shortcuts.mdx`)
+**Purpose**: Run Shortcuts app workflows
+
+**Content**:
+
+#### What It Does
+Triggers a shortcut from Apple's Shortcuts app.
+
+#### Configuration
+
+| Setting | Description |
+|---------|-------------|
+| Shortcut Name | Exact name of the shortcut |
+
+#### How It Works
+1. Create a shortcut in the Shortcuts app
+2. Create a trigger with the shortcut name
+3. Speak your trigger phrase
+4. Shortcut runs
+
+#### Example Uses
+- Home automation ("turn off lights")
+- Messaging ("text wife I'm on my way")
+- Media control ("play my workout playlist")
+
+**Links to**: Overview
+
+---
+
+### 5.12 AI Calls (`triggers/types/ai-calls.mdx`)
+**Purpose**: Custom AI-powered responses
+
+**Content**:
+
+#### What It Does
+Sends your input to an AI model with a custom prompt.
+
+#### AI Providers
+
+| Provider | Models | API Key Required |
+|----------|--------|------------------|
+| Hermes | GPT-OSS-120B | No (included) |
+| OpenAI | GPT-5, GPT-5 Pro | Yes |
+| Anthropic | Claude Sonnet/Opus/Haiku 4.5 | Yes |
+| xAI | Grok 4, Grok 4.1 Fast | Yes |
+| Local | Coming soon | No |
+
+#### Configuration
+
+| Setting | Description |
+|---------|-------------|
+| Provider | Which AI service |
+| Model | Specific model |
+| Prompt Template | Your custom prompt |
+| Output Handling | What to do with response |
+| Streaming | Show response as it generates |
+
+#### Output Handling Options
+
+| Option | What Happens |
+|--------|--------------|
+| Inject | Insert text at cursor |
+| Clipboard | Copy to clipboard |
+| Notification | Show macOS notification |
+| Popup | Show in floating bubble |
+| Popup + Inject | Both popup and insert |
+
+#### Advanced Settings
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Temperature | 0.7 | Creativity (0=focused, 2=creative) |
+| Max Tokens | Model default | Response length limit |
+| System Prompt | None | Additional AI instructions |
+| Use Vision | Off | Include screenshot context |
+| Conversation History | Off | Remember previous messages |
+
+#### Template Variables
+
+| Variable | Value |
+|----------|-------|
+| `{transcription}` | What you said |
+| `{selected_text}` | Highlighted text |
+| `{date}` | Current date |
+| `{time}` | Current time |
+| `{app_name}` | Current app name |
+| `{bundle_id}` | App bundle ID |
+
+#### Example Prompts
+
+**Summarize**:
+```
+Summarize this in 3 bullet points:
+{transcription}
+```
+
+**Translate**:
+```
+Translate to Spanish:
+{transcription}
+```
+
+**Code explanation**:
+```
+Explain this code simply:
+{selected_text}
+```
+
+**Email draft**:
+```
+Write a professional email about:
+{transcription}
+
+Context: {app_name}
+```
+
+**Links to**: Variables & Templates, Text Formatting
+
+---
+
+### 5.13 Text Formatting (`triggers/types/text-formatting.mdx`)
+**Purpose**: AI-powered text editing
+
+**Content**:
+
+#### What It Does
+Uses AI to edit or reply to selected text.
+
+#### Formatting Types
+
+| Type | What It Does |
+|------|--------------|
+| Edit | Modify selected text based on instruction |
+| Reply | Generate a response to selected text |
+
+#### Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Formatting Type | Edit | Edit or Reply |
+| Requires Selection | Yes | Must have text selected |
+| Use Vision | Off | Include screenshot for context |
+| Output Handling | Inject | What to do with result |
+
+#### Context Sources (Priority Order)
+
+1. Selected text in app
+2. Vision-detected page content (if enabled)
+3. Surrounding text in text field
+4. Instruction only (fallback)
+
+#### Example Edit Instructions
+
+| You Say | What Happens |
+|---------|--------------|
+| "make this shorter" | Condenses the text |
+| "fix the grammar" | Corrects errors |
+| "make it more formal" | Professional tone |
+| "convert to bullet points" | List format |
+
+#### Example Reply Instructions
+
+| Selected Text | You Say | Result |
+|---------------|---------|--------|
+| Email asking for meeting | "accept and suggest Tuesday" | "Thank you for reaching out. Tuesday works well for me..." |
+| Slack message | "sounds good" | "Sounds good! I'll get that done." |
+
+**Links to**: AI Calls, Hermes Edit
+
+---
+
+### 5.14 Compound Actions (`triggers/types/compound-actions.mdx`)
+**Purpose**: Chain multiple actions together
+
+**Content**:
+
+#### What It Does
+Runs multiple actions from a single trigger phrase.
+
+#### Execution Modes
+
+| Mode | Behavior |
+|------|----------|
+| Sequential | Run actions one after another |
+| Parallel | Run all actions at the same time |
+
+#### Error Handling
+
+| Strategy | Behavior |
+|----------|----------|
+| Stop on Failure | Halt if any action fails |
+| Continue on Error | Keep going despite failures |
+
+#### Configuration
+
+| Setting | Description |
+|---------|-------------|
+| Actions | List of actions to perform |
+| Execution Mode | Sequential or Parallel |
+| Error Handling | Stop or Continue on error |
+| Pipeline | Pass data between actions |
+
+#### Pipeline (Data Passing)
+
+When enabled, output from one action can feed into the next:
+
+```
+Action 1: Web Search (returns URL)
+    ↓
+Action 2: AI Call (analyzes page)
+    ↓
+Action 3: Text Expansion (inserts result)
+```
+
+#### Example: "Research and Summarize"
+
+```
+Trigger: "research and summarize"
+Actions:
+  1. Web Search (Google) → Gets search results
+  2. AI Call → "Summarize the key points"
+  3. Inject → Insert summary at cursor
+```
+
+#### Example: "Setup Workspace"
+
+```
+Trigger: "setup dev workspace"
+Actions (Parallel):
+  1. App Launcher → Open VS Code
+  2. App Launcher → Open Terminal
+  3. Window Layout → VS Code to Left Half
+  4. Window Layout → Terminal to Right Half
+```
+
+**Links to**: All trigger types
+
+---
+
+### 5.15 Variables & Templates (`triggers/variables.mdx`)
+**Purpose**: Reference for all available variables
+
+**Content**:
+
+#### Global Variables
+
+Available in all action types:
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `{transcription}` | Full dictated text | "send an email to John" |
+| `{remainder}` | Text after prefix trigger | "to John" |
+| `{selected_text}` | Currently highlighted text | "Hello world" |
+| `{date}` | Current date | "January 15, 2025" |
+| `{time}` | Current time | "3:45 PM" |
+| `{app_name}` | Frontmost app name | "Safari" |
+| `{bundle_id}` | App bundle identifier | "com.apple.Safari" |
+
+#### Web Search Variables
+
+| Variable | Description |
+|----------|-------------|
+| `{query}` | The search query |
+| `{pretext}` | Text prepended to query |
+| `{posttext}` | Text appended to query |
+
+#### Template Syntax
+
+Variables use curly braces: `{variable_name}`
+
+**Simple substitution**:
+```
+Hello {transcription}
+→ Hello how are you today
+```
+
+**Multiple variables**:
+```
+At {time} on {date}, you said: {transcription}
+→ At 3:45 PM on January 15, 2025, you said: schedule meeting
+```
+
+**Links to**: AI Calls, Web Search
+
+---
+
+### 5.16 Default Triggers (`triggers/defaults.mdx`)
+**Purpose**: Pre-configured triggers to get started
+
+**Content**:
+
+#### What Are Default Triggers?
+Hermes includes a set of ready-to-use triggers that you can enable.
+
+#### Enabling Defaults
+1. Go to Settings → Triggers
+2. Click "Setup Defaults"
+3. Choose which defaults to enable
+4. Customize as needed
+
+#### Available Default Triggers
+
+**Window Management**:
+| Phrase | Action |
+|--------|--------|
+| "window left" | Snap to left half |
+| "window right" | Snap to right half |
+| "maximize window" | Maximize |
+| "fullscreen" | Enter fullscreen |
+
+**Web Search**:
+| Phrase | Action |
+|--------|--------|
+| "search google for" | Google search |
+| "search duck for" | DuckDuckGo search |
+
+**Apps**:
+| Phrase | Action |
+|--------|--------|
+| "open [app name]" | Launch application |
+
+#### Customizing Defaults
+All default triggers can be:
+- Modified (change phrase or action)
+- Disabled (keep but don't use)
+- Deleted (remove entirely)
+
+#### Language Support
+Default triggers are available in:
+- English (default)
+- More languages coming
+
+**Links to**: Creating Triggers
+
+---
+
+## Part 6: Account & Teams
+
+### 6.1 Plans & Pricing (`account/plans.mdx`)
+**Purpose**: Subscription options
+
+**Content**:
+
+#### Available Plans
+
+| Plan | Price | Best For |
+|------|-------|----------|
+| Free | $0 | Trying Hermes |
+| Monthly | $X/mo | Flexibility |
+| Annual | $X/yr | Best value |
+| Lifetime | $XXX | Long-term users |
+| Team | $X/seat/mo | Organizations |
+
+#### Feature Comparison
+
+| Feature | Free | Paid |
+|---------|------|------|
+| Basic dictation | ✅ | ✅ |
+| AI formatting | Limited | Unlimited |
+| Vision context | ❌ | ✅ |
+| Triggers | 5 max | Unlimited |
+| Dictionary | 20 words | Unlimited |
+| Cloud sync | ❌ | ✅ |
+| Priority support | ❌ | ✅ |
+
+#### Choosing a Plan
+- **Free**: Perfect for occasional use
+- **Monthly**: If you're not sure yet
+- **Annual**: Best value (save X%)
+- **Lifetime**: One-time payment, forever access
+
+**Links to**: Billing, Teams
+
+---
+
+### 6.2 Billing (`account/billing.mdx`)
+**Purpose**: Managing subscription
+
+**Content**:
+- Viewing current plan
+- Upgrading/downgrading
+- Payment methods
+- Invoices and receipts
+- Cancellation
+
+**Links to**: Plans, Teams
+
+---
+
+### 6.3 Teams (`account/teams.mdx`)
+**Purpose**: Team collaboration
+
+**Content**:
+- Creating a team
+- Inviting members
+- Managing seats
+- Shared dictionaries
+- Team billing
+- Roles: Owner, Admin, Member
+
+**Links to**: Billing, Dictionary
+
+---
+
+## Part 7: Troubleshooting
+
+### 7.1 Common Issues (`troubleshooting/common-issues.mdx`)
+Quick solutions for frequent problems.
+
+### 7.2 Permissions Issues (`troubleshooting/permissions.mdx`)
+Fixing permission-related problems.
+
+### 7.3 Audio Issues (`troubleshooting/audio.mdx`)
+Microphone and audio troubleshooting.
+
+---
+
+## Updated docs.json Structure
+
+```json
+{
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": ["index", "quickstart", "setup/permissions", "setup/first-dictation"]
+          },
+          {
+            "group": "Core Features",
+            "pages": [
+              "features/dictation",
+              "features/hotkeys",
+              "features/ai-formatting",
+              "features/hermes-reply",
+              "features/hermes-edit",
+              "features/hermes-chat",
+              "features/notes"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/overview",
+              "settings/dictation",
+              "settings/ai-formatting",
+              "settings/interface",
+              "settings/privacy",
+              "settings/keyboard-shortcuts"
+            ]
+          },
+          {
+            "group": "Customization",
+            "pages": ["customization/formatting-modes", "customization/dictionary"]
+          },
+          {
+            "group": "Triggers",
+            "pages": [
+              "triggers/overview",
+              "triggers/creating-triggers",
+              "triggers/matching-modes",
+              {
+                "group": "Trigger Types",
+                "pages": [
+                  "triggers/types/text-expansion",
+                  "triggers/types/web-search",
+                  "triggers/types/app-launcher",
+                  "triggers/types/window-layout",
+                  "triggers/types/window-actions",
+                  "triggers/types/keyboard-shortcuts",
+                  "triggers/types/terminal",
+                  "triggers/types/siri-shortcuts",
+                  "triggers/types/ai-calls",
+                  "triggers/types/text-formatting",
+                  "triggers/types/compound-actions"
+                ]
+              },
+              "triggers/variables",
+              "triggers/defaults"
+            ]
+          },
+          {
+            "group": "Account & Teams",
+            "pages": ["account/plans", "account/billing", "account/teams"]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/common-issues",
+              "troubleshooting/permissions",
+              "troubleshooting/audio"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": ["api-reference/introduction"]
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+---
+
+## Implementation Priority
+
+### Phase 1: Foundation
+1. index.mdx (welcome)
+2. quickstart.mdx
+3. setup/permissions.mdx
+4. features/dictation.mdx
+5. features/ai-formatting.mdx
+6. settings/overview.mdx
+
+### Phase 2: Core Features
+7. All remaining features pages
+8. All settings pages
+9. customization/formatting-modes.mdx
+10. customization/dictionary.mdx
+
+### Phase 3: Triggers (Complete)
+11. triggers/overview.mdx
+12. triggers/creating-triggers.mdx
+13. triggers/matching-modes.mdx
+14. All 11 trigger type pages
+15. triggers/variables.mdx
+16. triggers/defaults.mdx
+
+### Phase 4: Account & Support
+17. Account pages
+18. Troubleshooting pages
+19. API reference
+
+---
+
+## Next Steps
+
+1. **Review this plan** - Any sections to add/remove?
+2. **Approve structure** - Confirm hierarchy and nesting
+3. **Begin Phase 1** - Create foundational pages
+4. **Iterate** - Refine based on feedback

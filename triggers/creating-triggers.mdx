@@ -1,0 +1,127 @@
+---
+title: "Creating Your First Trigger"
+description: "Step-by-step guide to creating a trigger in Hermes."
+---
+
+## Create a web search trigger
+
+Let's create a trigger that searches Google when you say "search google for..."
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers** in Hermes.
+  </Step>
+  <Step title="Click New Trigger">
+    Click the **+** or **New Trigger** button.
+  </Step>
+  <Step title="Enter the trigger phrase">
+    Type: `search google for`
+
+    This is what you'll say to activate the trigger.
+  </Step>
+  <Step title="Choose matching mode">
+    Select: **Prefix**
+
+    This means the trigger activates when your speech *starts with* "search google for", and everything after becomes your search query.
+  </Step>
+  <Step title="Select action type">
+    Choose: **Web Search**
+  </Step>
+  <Step title="Configure the action">
+    - **Search Engine**: Google
+    - **Browser**: Default
+
+    Leave other settings as default.
+  </Step>
+  <Step title="Save">
+    Click **Save** or **Create**.
+  </Step>
+</Steps>
+
+## Test your trigger
+
+1. Press your dictation hotkey
+2. Say: "search google for best coffee shops nearby"
+3. Release the hotkey
+4. Google opens with your search
+
+---
+
+## Create a window layout trigger
+
+Let's create a trigger that snaps your window to the left half of the screen.
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Click New Trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Enter the trigger phrase">
+    Type: `window left`
+  </Step>
+  <Step title="Choose matching mode">
+    Select: **Exact**
+
+    This means the trigger only activates when you say exactly "window left".
+  </Step>
+  <Step title="Select action type">
+    Choose: **Window Layout**
+  </Step>
+  <Step title="Configure the action">
+    - **Layout**: Left Half
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+## Test your trigger
+
+1. Open any window
+2. Press your dictation hotkey
+3. Say: "window left"
+4. Release the hotkey
+5. The window snaps to the left half
+
+---
+
+## Tips for good triggers
+
+### Keep phrases short but unique
+
+- **Good**: "search google for" — short, distinctive
+- **Bad**: "I want to search" — too generic, might match normal speech
+
+### Avoid phrases you use naturally
+
+If your trigger phrase appears in normal conversation, it will activate unexpectedly.
+
+- **Good**: "window left" — unlikely to say in conversation
+- **Bad**: "can you" — you probably say this often
+
+### Use consistent patterns
+
+Create a naming convention for your triggers:
+
+- "search [engine] for" — Google, DuckDuckGo, YouTube
+- "window [position]" — left, right, maximize
+- "open [app]" — Slack, Safari, Terminal
+
+### Start simple
+
+Begin with simple actions like web search and window layouts. Move to advanced triggers (Terminal, AI Calls) once you're comfortable.
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Matching modes" icon="crosshairs" href="/triggers/matching-modes">
+    Understand prefix, exact, and contains matching.
+  </Card>
+  <Card title="Explore trigger types" icon="grid-2" href="/triggers/overview">
+    See all 11 action types.
+  </Card>
+</CardGroup>

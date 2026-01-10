@@ -1,0 +1,172 @@
+---
+title: "AI Formatting"
+description: "How Hermes uses AI to format your dictation with proper punctuation, capitalization, and context-aware styling."
+---
+
+## What AI formatting does
+
+When you dictate, Hermes doesn't just transcribe your words—it formats them intelligently. AI formatting handles:
+
+- **Punctuation** — Adds periods, commas, and question marks where they belong
+- **Capitalization** — Capitalizes sentence starts, proper nouns, and acronyms
+- **Filler word removal** — Removes "um", "uh", "like", and other verbal fillers
+- **Number conversion** — Turns "twenty three" into "23"
+- **Context-aware styling** — Adjusts formality based on which app you're using
+
+## The formatting pipeline
+
+Here's what happens to your words between speaking and the final text:
+
+```
+1. Speech → Raw transcription
+2. Cleanup → Remove fillers, format numbers
+3. Context detection → Which app are you in?
+4. AI formatting → Apply style based on context
+5. Final text → Inserted at your cursor
+```
+
+Each step builds on the last. The AI considers everything—what you said, how you said it, and where you're typing—to produce natural text.
+
+---
+
+## Context detection
+
+Hermes detects which application you're using and adjusts formatting accordingly.
+
+### How it works
+
+1. **App detection** — Hermes identifies the frontmost application
+2. **Mode matching** — The app is matched to a formatting mode (Email, Messaging, Coding, etc.)
+3. **Style application** — Formatting rules for that mode are applied
+
+### Example: Same words, different contexts
+
+**You say:** "hey can you send me the report when you get a chance thanks"
+
+**In Slack (Messaging mode):**
+> hey, can you send me the report when you get a chance? thanks
+
+**In Mail (Email mode):**
+> Hey, can you send me the report when you get a chance? Thanks.
+
+**In VS Code (Coding mode):**
+> hey can you send me the report when you get a chance thanks
+
+The words are the same, but the formatting matches where you're typing.
+
+---
+
+## Formatting modes
+
+Hermes includes built-in modes for common apps. Each mode has its own formatting style.
+
+| Mode | Apps | Style |
+|------|------|-------|
+| **Messaging** | Slack, Discord, Teams, iMessage, WhatsApp | Casual — lowercase starts OK, relaxed punctuation |
+| **Email** | Mail, Gmail, Outlook | Formal — proper capitalization, professional structure |
+| **Coding** | VS Code, Xcode, Terminal, GitHub | Minimal — preserves technical syntax, light formatting |
+| **Writing** | Notes, Word, Notion, Obsidian | Semi-casual — clear structure, proper formatting |
+| **AI Assistants** | ChatGPT, Claude | Casual — conversational tone |
+
+### Web apps too
+
+Formatting modes work with web apps. When you're in Safari or Chrome, Hermes detects the website:
+
+- `mail.google.com` → Email mode
+- `slack.com` → Messaging mode
+- `github.com` → Coding mode
+- `notion.so` → Writing mode
+
+<Card title="Customize formatting modes" icon="palette" href="/customization/formatting-modes">
+  Create your own modes or modify the built-in ones.
+</Card>
+
+---
+
+## Talking habits
+
+Within each mode, you can set a "talking habit" that controls the overall tone:
+
+| Habit | Description | Example |
+|-------|-------------|---------|
+| **Casual** | Relaxed, conversational | "hey, sounds good! let me know" |
+| **Semi-casual** | Balanced, clear | "Hey, that sounds good. Let me know." |
+| **Formal** | Professional, polished | "Hello, that sounds agreeable. Please let me know." |
+
+Set your default talking habit in **Settings → AI Formatting**, or customize it per mode.
+
+---
+
+## Vision context
+
+For even smarter formatting, you can enable **Vision**. When enabled, Hermes takes a screenshot when you dictate to understand more about what you're doing.
+
+### What Vision enables
+
+- **Better app detection** — Works even when app names aren't clear
+- **Content awareness** — Knows if you're replying to an email or writing a new one
+- **Page context** — Understands what's on screen for more relevant formatting
+
+### Privacy
+
+<Note>
+  Vision is opt-in and disabled by default. Screenshots are processed instantly and never stored or transmitted.
+</Note>
+
+Enable Vision in **Settings → AI Formatting → Enable Vision**.
+
+---
+
+## When formatting is skipped
+
+AI formatting doesn't always run. It may be skipped when:
+
+- **Formatting is disabled** for the current app (using the "Disabled" mode)
+- **You're in Code mode** and the text looks like code
+- **Privacy mode is enabled** and all cloud features are off
+- **Daily limit reached** (for free plans)
+
+You can also create a "Disabled" mode for apps where you want raw transcription without any formatting.
+
+---
+
+## Customizing AI formatting
+
+### Custom instructions
+
+Add specific rules that apply to all your dictations:
+
+- "Always expand contractions"
+- "Use British spelling"
+- "Never use exclamation marks"
+
+Set these in **Settings → AI Formatting → Custom Instructions**.
+
+### Per-app rules
+
+Add rules that only apply to specific apps:
+
+- For email: "Always start with a greeting"
+- For Slack: "Keep messages under 50 words"
+- For code: "Preserve all technical terms exactly"
+
+Set these in **Settings → AI Formatting → Modes → [Mode] → Custom Instructions**.
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Formatting Modes" icon="palette" href="/customization/formatting-modes">
+    Create and customize formatting modes for specific apps.
+  </Card>
+  <Card title="AI Formatting Settings" icon="gear" href="/settings/ai-formatting">
+    All AI formatting configuration options.
+  </Card>
+  <Card title="Dictation" icon="microphone" href="/features/dictation">
+    The basics of voice dictation.
+  </Card>
+  <Card title="Privacy Settings" icon="lock" href="/settings/privacy">
+    Control what data Hermes uses and stores.
+  </Card>
+</CardGroup>

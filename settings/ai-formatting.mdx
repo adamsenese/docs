@@ -1,0 +1,131 @@
+---
+title: "AI Formatting Settings"
+description: "Configure how Hermes formats your dictation with AI."
+---
+
+## Core settings
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Enable AI Formatting** | On | Apply AI to format your dictation |
+| **Smart Punctuation** | On | Automatically add periods, commas, etc. |
+| **Auto-Detect App** | On | Detect which app you're in for context |
+
+### Disabling AI formatting
+
+When AI formatting is off, you get raw transcription with minimal processing. This is useful if you want complete control over formatting.
+
+---
+
+## Vision
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Enable Vision** | Off | Let Hermes see your screen for better context |
+| **Daily Limit** | 200 | Maximum vision uses per day |
+
+### What Vision does
+
+When enabled, Hermes takes a screenshot when you start dictating. This helps it understand:
+- Which app you're really in (not just the frontmost window)
+- What content is on screen (for better context)
+- The type of text field you're typing in
+
+### Privacy
+
+<Note>
+Vision is opt-in and disabled by default. Screenshots are analyzed instantly and immediately discarded. They are never stored or transmitted.
+</Note>
+
+Vision uses more resources than text-only detection, which is why there's a daily limit.
+
+---
+
+## Local AI
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Use Local AI** | Off | Process text on your Mac instead of the cloud |
+| **Local Model** | qwen-2.5-vl-7b | The AI model to use locally |
+
+### When to use Local AI
+
+Local AI is for users who want:
+- Maximum privacy (no data leaves your Mac)
+- Offline functionality
+- Independence from cloud services
+
+### Trade-offs
+
+| Local AI | Cloud AI |
+|----------|----------|
+| More private | Faster |
+| Works offline | Better quality |
+| Uses more battery | Requires internet |
+| Vision not available | Vision available |
+
+---
+
+## Talking habits
+
+| Setting | Default | Options |
+|---------|---------|---------|
+| **Default Talking Habit** | Semi-casual | Casual, Semi-casual, Formal |
+
+This sets the baseline tone for your dictation when no specific mode applies.
+
+| Habit | Example |
+|-------|---------|
+| Casual | "hey, sounds good! let me know" |
+| Semi-casual | "Hey, that sounds good. Let me know." |
+| Formal | "Hello, that sounds agreeable. Please let me know." |
+
+You can override this per-app using [Formatting Modes](/customization/formatting-modes).
+
+---
+
+## Custom instructions
+
+Add global formatting rules that apply to all your dictation:
+
+1. Go to **Settings → AI Formatting → Custom Instructions**
+2. Enter your rules in natural language
+3. Save
+
+### Example instructions
+
+```
+Always expand contractions.
+Use British spelling.
+Never use exclamation marks.
+Always use the Oxford comma.
+```
+
+These instructions are applied after mode-specific rules.
+
+---
+
+## Usage limits
+
+| Metric | Free Plan | Paid Plans |
+|--------|-----------|------------|
+| AI Formatting | Limited daily words | Unlimited |
+| Vision | Not available | 200/day |
+
+View your current usage in **Settings → AI Formatting → Usage**.
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Formatting Modes" icon="palette" href="/customization/formatting-modes">
+    Customize formatting per app.
+  </Card>
+  <Card title="AI Formatting Feature" icon="wand-magic-sparkles" href="/features/ai-formatting">
+    How AI formatting works.
+  </Card>
+  <Card title="Privacy Settings" icon="lock" href="/settings/privacy">
+    Control data and privacy options.
+  </Card>
+</CardGroup>

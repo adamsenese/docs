@@ -1,0 +1,115 @@
+---
+title: "Text Expansion"
+description: "Replace trigger phrases with predefined text."
+---
+
+## What it does
+
+Text Expansion replaces your trigger phrase with predefined text. It's the simplest trigger type — say a short phrase, get a longer text.
+
+## Configuration
+
+| Setting | Description |
+|---------|-------------|
+| **Output Text** | The text to insert when triggered |
+
+## Examples
+
+| Trigger Phrase | Output Text |
+|----------------|-------------|
+| "my email" | john.smith@company.com |
+| "my address" | 123 Main Street, City, State 12345 |
+| "my phone" | (555) 123-4567 |
+| "regards" | Best regards, John Smith |
+| "meeting link" | https://zoom.us/j/123456789 |
+| "standup update" | Yesterday: ... Today: ... Blockers: ... |
+
+---
+
+## Creating a text expansion trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter what you'll say (e.g., "my email").
+  </Step>
+  <Step title="Choose matching mode">
+    Select **Exact** for simple replacements.
+  </Step>
+  <Step title="Select Text Expansion">
+    Choose **Text Expansion** as the action type.
+  </Step>
+  <Step title="Enter output text">
+    Type the text you want inserted.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Multi-line text
+
+You can include line breaks in your output text. This is useful for:
+
+- Email signatures
+- Code snippets
+- Template responses
+- Formatted addresses
+
+### Example: Email signature
+
+**Trigger phrase**: "my signature"
+
+**Output text**:
+```
+Best regards,
+
+John Smith
+Senior Developer
+Acme Corporation
+john@acme.com | (555) 123-4567
+```
+
+---
+
+## Use cases
+
+### Contact information
+Quick insertion of emails, phone numbers, addresses.
+
+### Canned responses
+Pre-written replies for common questions or situations.
+
+### Code snippets
+Frequently used code patterns or boilerplate.
+
+### Templates
+Meeting notes, status updates, report formats.
+
+---
+
+## Tips
+
+- **Keep trigger phrases short** — "addr" is faster than "my home address"
+- **Use exact matching** — Prevents accidental triggers
+- **Test your output** — Make sure formatting looks right in your target apps
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Variables" icon="code" href="/triggers/variables">
+    Add dynamic content to expansions.
+  </Card>
+  <Card title="AI Calls" icon="robot" href="/triggers/types/ai-calls">
+    Generate dynamic text with AI.
+  </Card>
+</CardGroup>

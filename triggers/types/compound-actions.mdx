@@ -1,0 +1,216 @@
+---
+title: "Compound Actions"
+description: "Chain multiple actions together in one trigger."
+---
+
+## What it does
+
+Compound Actions run multiple actions from a single trigger. Open an app AND snap its window. Search the web AND copy the URL. Run a command AND show a notification.
+
+## Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Actions** | Required | List of actions to perform |
+| **Execution Mode** | Sequential | Sequential or Parallel |
+| **Error Handling** | Stop on Failure | How to handle errors |
+| **Pipeline** | Off | Pass data between actions |
+
+---
+
+## Execution modes
+
+### Sequential
+
+Actions run one after another, in order.
+
+```
+Action 1 → wait → Action 2 → wait → Action 3
+```
+
+**Use when**:
+- Actions depend on each other
+- Order matters
+- You need the result of one action for the next
+
+### Parallel
+
+All actions run at the same time.
+
+```
+Action 1 ─┐
+Action 2 ─┼→ (all at once)
+Action 3 ─┘
+```
+
+**Use when**:
+- Actions are independent
+- Speed matters
+- No dependencies between actions
+
+---
+
+## Error handling
+
+### Stop on Failure
+
+If any action fails, stop immediately. Remaining actions don't run.
+
+**Use when**:
+- Later actions depend on earlier ones
+- Partial completion is worse than no completion
+
+### Continue on Error
+
+Keep going even if an action fails.
+
+**Use when**:
+- Actions are independent
+- You want to complete as much as possible
+
+---
+
+## Examples
+
+### Setup workspace (parallel)
+
+**Trigger**: "setup dev"
+
+**Actions** (parallel):
+1. App Launcher → Open VS Code
+2. App Launcher → Open Terminal
+3. App Launcher → Open Safari
+
+**Result**: All three apps open simultaneously.
+
+---
+
+### Setup workspace with layout (sequential)
+
+**Trigger**: "setup dev workspace"
+
+**Actions** (sequential):
+1. App Launcher → Open VS Code
+2. Window Layout → VS Code to Left Half
+3. App Launcher → Open Terminal
+4. Window Layout → Terminal to Right Half
+
+**Result**: VS Code opens on the left, Terminal on the right.
+
+---
+
+### Search and copy (sequential)
+
+**Trigger**: "research"
+
+**Actions** (sequential):
+1. Web Search → Google search
+2. Keyboard Shortcuts → ⌘L (select URL bar)
+3. Keyboard Shortcuts → ⌘C (copy URL)
+
+**Result**: Searches Google and copies the URL.
+
+---
+
+### Deploy with notification
+
+**Trigger**: "deploy"
+
+**Actions** (sequential):
+1. Terminal → `npm run build && npm run deploy`
+2. Siri Shortcuts → "Send Deployment Notification"
+
+**Result**: Builds, deploys, then sends notification.
+
+---
+
+### Morning routine (parallel)
+
+**Trigger**: "good morning"
+
+**Actions** (parallel):
+1. App Launcher → Open Mail
+2. App Launcher → Open Slack
+3. App Launcher → Open Calendar
+4. Web Search → Open news site
+
+**Result**: All your morning apps open at once.
+
+---
+
+## Creating a compound action trigger
+
+<Steps>
+  <Step title="Open Triggers">
+    Go to **Settings → Triggers**.
+  </Step>
+  <Step title="Create new trigger">
+    Click **+** or **New Trigger**.
+  </Step>
+  <Step title="Set the phrase">
+    Enter your trigger phrase.
+  </Step>
+  <Step title="Select Compound Action">
+    Choose **Compound Action** as the action type.
+  </Step>
+  <Step title="Add actions">
+    Click **Add Action** for each action you want.
+    Configure each action individually.
+  </Step>
+  <Step title="Set execution mode">
+    Choose Sequential or Parallel.
+  </Step>
+  <Step title="Set error handling">
+    Choose Stop on Failure or Continue on Error.
+  </Step>
+  <Step title="Save">
+    Click **Save**.
+  </Step>
+</Steps>
+
+---
+
+## Pipeline (advanced)
+
+When **Pipeline** is enabled, the output of one action feeds into the next.
+
+### Example: Search → Summarize
+
+1. **Web Search** → Returns page content
+2. **AI Call** → Summarizes the content
+
+With pipeline enabled, the AI Call receives the web page content automatically.
+
+---
+
+## Tips
+
+- **Start simple** — Begin with 2-3 actions, add more as needed
+- **Use sequential** when order matters
+- **Use parallel** for independent app launches
+- **Add delays** between sequential actions if timing is sensitive
+- **Test each action individually** before combining
+
+---
+
+## Limitations
+
+- Maximum actions per compound: Varies by complexity
+- Deeply nested compounds (compound within compound) may be slow
+- Pipeline data is limited by action output types
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="App Launcher" icon="rocket" href="/triggers/types/app-launcher">
+    Open apps in compound actions.
+  </Card>
+  <Card title="Window Layout" icon="table-cells-large" href="/triggers/types/window-layout">
+    Position windows after launching.
+  </Card>
+  <Card title="Terminal Commands" icon="terminal" href="/triggers/types/terminal">
+    Run scripts in sequences.
+  </Card>
+</CardGroup>

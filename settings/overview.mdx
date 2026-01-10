@@ -1,0 +1,131 @@
+---
+title: "Settings Overview"
+description: "A map of all Hermes settings and how they relate to each other."
+---
+
+## Settings architecture
+
+Hermes settings are organized into five main categories. Understanding how they connect helps you configure the app effectively.
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                          SETTINGS                                │
+├────────────────┬────────────────┬────────────────┬───────────────┤
+│   Dictation    │  AI Formatting │   Interface    │    Privacy    │
+├────────────────┼────────────────┼────────────────┼───────────────┤
+│ • Language     │ • Modes        │ • Theme        │ • Cloud Sync  │
+│ • Microphone   │ • Talking Habit│ • Bar Position │ • Analytics   │
+│ • Audio        │ • Vision       │ • Menu Bar     │ • History     │
+│ • Processing   │ • Local AI     │ • Animations   │ • Crash Data  │
+└────────────────┴────────────────┴────────────────┴───────────────┘
+                              │
+                 ┌────────────┴────────────┐
+                 │   Keyboard Shortcuts    │
+                 │   (Global hotkeys)      │
+                 └─────────────────────────┘
+```
+
+---
+
+## How settings affect each other
+
+Some settings have dependencies or affect other features. Here are the key relationships:
+
+### Privacy Mode → Everything
+
+When **Privacy Mode** is enabled:
+- Cloud Sync is disabled
+- Analytics is disabled
+- Crash reports are disabled
+
+Privacy Mode is a master switch that blocks all data from leaving your Mac.
+
+### Vision → AI Formatting
+
+When **Vision** is enabled:
+- AI Formatting gets screen context
+- Better app and content detection
+- More accurate formatting modes
+
+Vision makes AI Formatting smarter, but it's optional for privacy reasons.
+
+### Local AI → Cloud Features
+
+When **Local AI** is enabled:
+- Text processing happens on your Mac
+- Cloud AI is not used for formatting
+- Vision context is not available
+
+Local AI prioritizes privacy over features.
+
+---
+
+## Settings categories
+
+<CardGroup cols={2}>
+  <Card title="Dictation" icon="microphone" href="/settings/dictation">
+    Language, microphone selection, audio processing, and text cleanup options.
+  </Card>
+  <Card title="AI Formatting" icon="wand-magic-sparkles" href="/settings/ai-formatting">
+    Formatting modes, talking habits, Vision, and Local AI options.
+  </Card>
+  <Card title="Interface" icon="desktop" href="/settings/interface">
+    Theme, Hermes bar position, menu bar, and animation settings.
+  </Card>
+  <Card title="Privacy" icon="lock" href="/settings/privacy">
+    Cloud sync, analytics, history retention, and Privacy Mode.
+  </Card>
+  <Card title="Keyboard Shortcuts" icon="keyboard" href="/settings/keyboard-shortcuts">
+    Hotkey configuration for dictation and other actions.
+  </Card>
+</CardGroup>
+
+---
+
+## Quick reference: Defaults
+
+| Category | Setting | Default |
+|----------|---------|---------|
+| **Dictation** | Language | English |
+| **Dictation** | Max Duration | 5 minutes |
+| **Dictation** | Auto-stop after silence | On |
+| **Dictation** | Remove filler words | Off |
+| **AI Formatting** | Enabled | On |
+| **AI Formatting** | Smart Punctuation | On |
+| **AI Formatting** | Vision | Off |
+| **AI Formatting** | Local AI | Off |
+| **Interface** | Theme | Auto (system) |
+| **Interface** | Bar Position | Bottom Middle |
+| **Interface** | Menu Bar Icon | Visible |
+| **Interface** | Animations | On |
+| **Privacy** | Privacy Mode | Off |
+| **Privacy** | Cloud Sync | On |
+| **Privacy** | Analytics | On |
+| **Shortcuts** | Dictation Hotkey | Fn |
+
+---
+
+## Syncing settings
+
+Your settings sync across devices automatically when:
+
+- **Cloud Sync** is enabled (Settings → Privacy)
+- You're signed in to your Hermes account
+- **Privacy Mode** is off
+
+If any of these conditions aren't met, settings stay local to your Mac.
+
+---
+
+## Resetting settings
+
+To reset all settings to defaults:
+
+1. Open Hermes
+2. Go to **Settings**
+3. Scroll to the bottom
+4. Click **Reset to Defaults**
+
+<Warning>
+  This resets all settings. Your dictionary, triggers, and notes are not affected.
+</Warning>

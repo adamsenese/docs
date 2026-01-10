@@ -1,0 +1,125 @@
+---
+title: "App Launcher"
+description: "Open applications with your voice."
+---
+
+## What it does
+
+App Launcher opens any application on your Mac. Say "open Slack" and Slack launches.
+
+## Configuration
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Activate on Launch** | On | Bring app to foreground |
+| **Hide Others** | Off | Hide other apps when launching |
+| **Allow Partial Matches** | On | "saf" matches Safari |
+
+---
+
+## How app matching works
+
+Hermes finds your app using smart matching:
+
+1. **Exact match**: "Safari" → Safari
+2. **Partial match**: "saf" → Safari (if enabled)
+3. **Common names**: "Chrome" → Google Chrome
+4. **Fuzzy match**: "Safar" → Safari (handles typos)
+
+### Common corrections
+
+Hermes automatically handles spoken variations:
+
+| You say | Opens |
+|---------|-------|
+| "eye term" | iTerm |
+| "vee ess code" | Visual Studio Code |
+| "ex code" | Xcode |
+| "chrome" | Google Chrome |
+| "word" | Microsoft Word |
+| "excel" | Microsoft Excel |
+
+---
+
+## Examples
+
+| Trigger Phrase | Opens |
+|----------------|-------|
+| "open safari" | Safari |
+| "launch slack" | Slack |
+| "open terminal" | Terminal |
+| "start vscode" | Visual Studio Code |
+| "open finder" | Finder |
+| "launch spotify" | Spotify |
+
+---
+
+## Creating an app launcher trigger
+
+### Option 1: Generic "open" trigger
+
+Create one trigger that opens any app by name.
+
+<Steps>
+  <Step title="Create trigger">
+    Phrase: `open`
+    Matching: **Prefix**
+  </Step>
+  <Step title="Select App Launcher">
+    Choose **App Launcher** as the action type.
+  </Step>
+  <Step title="Enable partial matching">
+    Turn on **Allow Partial Matches**.
+  </Step>
+  <Step title="Save">
+    Now "open [any app]" will work.
+  </Step>
+</Steps>
+
+### Option 2: Specific app triggers
+
+Create dedicated triggers for frequently used apps.
+
+**Trigger**: "slack"
+**Matching**: Exact
+**Action**: App Launcher (opens Slack)
+
+This is faster since there's no "open" prefix needed.
+
+---
+
+## Launch options
+
+### Activate on Launch
+
+When enabled, the app comes to the foreground. When disabled, the app opens in the background.
+
+**Use cases for background launch:**
+- Start an app without switching to it
+- Launch multiple apps in sequence
+- Begin a process while continuing current work
+
+### Hide Others
+
+When enabled, all other apps are hidden when the target app launches. Creates a focused, single-app view.
+
+---
+
+## Tips
+
+- **Use prefix matching** for a generic "open [app]" trigger
+- **Use exact matching** for single-word app shortcuts ("slack", "safari")
+- **Partial matching** helps when you don't remember exact app names
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Web Search" icon="magnifying-glass" href="/triggers/types/web-search">
+    Open websites instead of apps.
+  </Card>
+  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
+    Launch multiple apps at once.
+  </Card>
+</CardGroup>
