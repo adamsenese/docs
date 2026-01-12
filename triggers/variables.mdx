@@ -1,5 +1,5 @@
 ---
-title: "Variables & Templates"
+title: "Variables"
 description: "Use dynamic values in your trigger actions."
 ---
 
@@ -7,169 +7,40 @@ description: "Use dynamic values in your trigger actions."
 
 Variables let you insert dynamic values into your trigger actions. Instead of hardcoding text, you can use placeholders that get replaced when the trigger runs.
 
-```
-Template: "Search for {remainder} on {date}"
-Speech:   "search google for coffee shops"
-Result:   "Search for coffee shops on January 15, 2025"
-```
-
 ---
 
 ## Available variables
 
-### Global variables
-
-Available in all action types:
-
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `{transcription}` | Full dictated text | "search google for coffee shops" |
-| `{remainder}` | Text after trigger phrase (prefix mode) | "coffee shops" |
-| `{selected_text}` | Currently highlighted text | "Hello world" |
-| `{date}` | Current date | "January 15, 2025" |
-| `{time}` | Current time | "3:45 PM" |
-| `{app_name}` | Frontmost application | "Safari" |
-| `{bundle_id}` | App bundle identifier | "com.apple.Safari" |
-
-### Web Search variables
-
 | Variable | Description |
 |----------|-------------|
-| `{query}` | The search query |
-| `{pretext}` | Text prepended to query |
-| `{posttext}` | Text appended to query |
+| `{transcription}` | What you said |
+| `{selected_text}` | Currently highlighted text |
 
 ---
 
 ## Using variables
 
-### In Text Expansion
+### In AI Calls
 
 ```
-Output: "Sent from {app_name} on {date}"
-Result: "Sent from Mail on January 15, 2025"
+Summarize this text:
+
+{selected_text}
+
+Keep it under 50 words.
 ```
 
 ### In Web Search
 
 ```
-Custom URL: "youtube.com/results?search_query={query}"
-Query: {remainder}
+{transcription}
 ```
-
-### In AI Calls
-
-```
-Prompt: "Summarize this text:
-
-{selected_text}
-
-Keep it under 50 words."
-```
-
-### In Terminal Commands
-
-```bash
-echo "Running at {time}" >> ~/log.txt
-echo "{transcription}" | pbcopy
-```
-
----
-
-## Transcription vs Remainder
-
-The difference between `{transcription}` and `{remainder}` is important:
-
-### Transcription
-
-The complete text you spoke.
-
-```
-Trigger phrase: "search for"
-You say: "search for coffee shops nearby"
-{transcription}: "search for coffee shops nearby"
-```
-
-### Remainder
-
-Only the text *after* your trigger phrase. Only available in prefix matching mode.
-
-```
-Trigger phrase: "search for"
-You say: "search for coffee shops nearby"
-{remainder}: "coffee shops nearby"
-```
-
-**Use `{remainder}`** when you want just the variable input.
-**Use `{transcription}`** when you need the full text.
-
----
-
-## Variable formatting
-
-Variables are replaced exactly as shown. To format them differently, you may need to:
-
-- Use AI Calls to process the text
-- Use Terminal commands with shell formatting
-- Build custom logic with compound actions
-
----
-
-## Examples by action type
-
-### Text Expansion
-
-| Template | Output |
-|----------|--------|
-| `My email is john@{app_name}.com` | `My email is john@Safari.com` |
-| `Last updated: {date}` | `Last updated: January 15, 2025` |
-| `Signed: {selected_text}` | `Signed: John Smith` |
-
-### Web Search
-
-| Template | Use |
-|----------|-----|
-| `{remainder}` | Search for what you said |
-| `site:reddit.com {remainder}` | Search Reddit |
-| `{remainder} {date}` | Include today's date in search |
-
-### AI Calls
-
-```
-Translate this to French:
-
-{selected_text}
-
-Maintain the original formatting.
-```
-
-### Terminal
-
-```bash
-# Use transcription
-echo "$HERMES_INPUT" > ~/notes/{date}.txt
-
-# These also work in commands
-mkdir -p ~/projects/{remainder}
-```
-
----
-
-## Tips
-
-- **Test with simple templates first** — Make sure variables resolve correctly
-- **Use {remainder} for input** — It's cleaner than parsing {transcription}
-- **Combine variables** — `{app_name} - {date}` works fine
-- **Escape if needed** — Some contexts may need special handling
 
 ---
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Matching Modes" icon="crosshairs" href="/triggers/matching-modes">
-    How prefix mode enables {remainder}.
-  </Card>
   <Card title="AI Calls" icon="robot" href="/triggers/types/ai-calls">
     Using variables in AI prompts.
   </Card>

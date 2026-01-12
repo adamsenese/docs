@@ -60,13 +60,8 @@ Use these in your prompt template:
 
 | Variable | Description |
 |----------|-------------|
-| `{transcription}` | What you said (full dictation) |
-| `{remainder}` | Text after the trigger phrase |
+| `{transcription}` | What you said |
 | `{selected_text}` | Currently highlighted text |
-| `{date}` | Current date |
-| `{time}` | Current time |
-| `{app_name}` | Current application name |
-| `{bundle_id}` | App bundle identifier |
 
 ---
 
@@ -109,7 +104,7 @@ Explain this code simply, as if to a junior developer:
 ```
 Write a professional email about the following topic:
 
-{remainder}
+{transcription}
 
 Keep it concise and friendly.
 ```
@@ -121,7 +116,7 @@ Keep it concise and friendly.
 ```
 Answer this question helpfully and concisely:
 
-{remainder}
+{transcription}
 ```
 
 ### Fix grammar
@@ -209,8 +204,5 @@ When **Use Vision** is enabled, Hermes includes a screenshot with your prompt. T
   </Card>
   <Card title="Variables" icon="code" href="/triggers/variables">
     All available template variables.
-  </Card>
-  <Card title="Compound Actions" icon="layer-group" href="/triggers/types/compound-actions">
-    Chain AI calls with other actions.
   </Card>
 </CardGroup>

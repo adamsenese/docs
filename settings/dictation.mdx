@@ -7,16 +7,11 @@ description: "Configure language, microphone, audio processing, and text cleanup
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| **Primary Language** | English | The main language for dictation |
-| **Additional Languages** | None | Secondary languages for auto-detection |
+| **Language** | Auto | The language for dictation |
 
-Hermes supports many languages including English, Spanish, French, German, Italian, Portuguese, Dutch, and more.
+Choose a specific language or select **Auto** to let Hermes detect the language automatically.
 
-### Changing your language
-
-1. Go to **Settings → Dictation → Language**
-2. Select your primary language
-3. Optionally add additional languages for multilingual dictation
+Hermes supports 100+ languages.
 
 ---
 
@@ -49,25 +44,7 @@ Hermes supports many languages including English, Spanish, French, German, Itali
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| **Voice Activity Threshold** | 0.1 | Sensitivity to speech detection |
-| **Max Recording Duration** | 5 minutes | Longest allowed dictation |
-| **Auto-stop after silence** | On | Automatically end dictation when you stop speaking |
 | **Mute speakers during dictation** | Off | Silence system audio while recording |
-
-### Voice activity threshold
-
-This controls how sensitive Hermes is to detecting speech:
-
-- **Lower values (0.0–0.3)**: More sensitive, picks up quieter speech
-- **Higher values (0.4–1.0)**: Less sensitive, requires louder speech
-
-If Hermes stops recording too early, lower this value. If it picks up background noise, raise it.
-
-### Auto-stop behavior
-
-When enabled, Hermes automatically stops recording after detecting silence. This is convenient for natural pausing—just stop talking when you're done.
-
-Disable this if you need long pauses mid-dictation (e.g., thinking time during a meeting).
 
 ---
 

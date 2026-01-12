@@ -76,13 +76,11 @@
                   "triggers/types/web-search",
                   "triggers/types/app-launcher",
                   "triggers/types/window-layout",
-                  "triggers/types/window-actions",
                   "triggers/types/keyboard-shortcuts",
                   "triggers/types/terminal",
                   "triggers/types/siri-shortcuts",
                   "triggers/types/ai-calls",
-                  "triggers/types/text-formatting",
-                  "triggers/types/compound-actions"
+                  "triggers/types/text-formatting"
                 ]
               },
               "triggers/variables",

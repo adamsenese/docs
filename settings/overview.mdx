@@ -5,7 +5,7 @@ description: "A map of all Hermes settings and how they relate to each other."
 
 ## Settings architecture
 
-Hermes settings are organized into five main categories. Understanding how they connect helps you configure the app effectively.
+Hermes settings are organized into four main categories. Understanding how they connect helps you configure the app effectively.
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -14,15 +14,10 @@ Hermes settings are organized into five main categories. Understanding how they 
 │   Dictation    │  AI Formatting │   Interface    │    Privacy    │
 ├────────────────┼────────────────┼────────────────┼───────────────┤
 │ • Language     │ • Modes        │ • Theme        │ • Cloud Sync  │
-│ • Microphone   │ • Talking Habit│ • Bar Position │ • Analytics   │
-│ • Audio        │ • Vision       │ • Menu Bar     │ • History     │
-│ • Processing   │ • Local AI     │ • Animations   │ • Crash Data  │
+│ • Microphone   │ • Instructions │ • Menu Bar     │ • Analytics   │
+│ • Audio        │ • Vision       │ • Animations   │ • History     │
+│ • Processing   │ • Local AI     │               │ • Crash Data  │
 └────────────────┴────────────────┴────────────────┴───────────────┘
-                              │
-                 ┌────────────┴────────────┐
-                 │   Keyboard Shortcuts    │
-                 │   (Global hotkeys)      │
-                 └─────────────────────────┘
 ```
 
 ---
@@ -70,13 +65,10 @@ Local AI prioritizes privacy over features.
     Formatting modes, talking habits, Vision, and Local AI options.
   </Card>
   <Card title="Interface" icon="desktop" href="/settings/interface">
-    Theme, Hermes bar position, menu bar, and animation settings.
+    Theme, menu bar, and animation settings.
   </Card>
   <Card title="Privacy" icon="lock" href="/settings/privacy">
     Cloud sync, analytics, history retention, and Privacy Mode.
-  </Card>
-  <Card title="Keyboard Shortcuts" icon="keyboard" href="/settings/keyboard-shortcuts">
-    Hotkey configuration for dictation and other actions.
   </Card>
 </CardGroup>
 
@@ -87,21 +79,18 @@ Local AI prioritizes privacy over features.
 | Category | Setting | Default |
 |----------|---------|---------|
 | **Dictation** | Language | English |
-| **Dictation** | Max Duration | 5 minutes |
-| **Dictation** | Auto-stop after silence | On |
 | **Dictation** | Remove filler words | Off |
 | **AI Formatting** | Enabled | On |
 | **AI Formatting** | Smart Punctuation | On |
 | **AI Formatting** | Vision | Off |
 | **AI Formatting** | Local AI | Off |
 | **Interface** | Theme | Auto (system) |
-| **Interface** | Bar Position | Bottom Middle |
 | **Interface** | Menu Bar Icon | Visible |
 | **Interface** | Animations | On |
 | **Privacy** | Privacy Mode | Off |
 | **Privacy** | Cloud Sync | On |
 | **Privacy** | Analytics | On |
-| **Shortcuts** | Dictation Hotkey | Fn |
+| **Dictation** | Hotkey | Fn |
 
 ---
 

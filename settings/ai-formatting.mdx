@@ -22,7 +22,6 @@ When AI formatting is off, you get raw transcription with minimal processing. Th
 | Setting | Default | Description |
 |---------|---------|-------------|
 | **Enable Vision** | Off | Let Hermes see your screen for better context |
-| **Daily Limit** | 200 | Maximum vision uses per day |
 
 ### What Vision does
 
@@ -36,8 +35,6 @@ When enabled, Hermes takes a screenshot when you start dictating. This helps it 
 <Note>
 Vision is opt-in and disabled by default. Screenshots are analyzed instantly and immediately discarded. They are never stored or transmitted.
 </Note>
-
-Vision uses more resources than text-only detection, which is why there's a daily limit.
 
 ---
 
@@ -66,31 +63,9 @@ Local AI is for users who want:
 
 ---
 
-## Talking habits
+## Instructions
 
-| Setting | Default | Options |
-|---------|---------|---------|
-| **Default Talking Habit** | Semi-casual | Casual, Semi-casual, Formal |
-
-This sets the baseline tone for your dictation when no specific mode applies.
-
-| Habit | Example |
-|-------|---------|
-| Casual | "hey, sounds good! let me know" |
-| Semi-casual | "Hey, that sounds good. Let me know." |
-| Formal | "Hello, that sounds agreeable. Please let me know." |
-
-You can override this per-app using [Formatting Modes](/customization/formatting-modes).
-
----
-
-## Custom instructions
-
-Add global formatting rules that apply to all your dictation:
-
-1. Go to **Settings → AI Formatting → Custom Instructions**
-2. Enter your rules in natural language
-3. Save
+Add global formatting rules that apply to all your dictation. Instructions is its own section in Hermes—open the app and go to **Instructions** to add your rules.
 
 ### Example instructions
 
@@ -110,9 +85,7 @@ These instructions are applied after mode-specific rules.
 | Metric | Free Plan | Paid Plans |
 |--------|-----------|------------|
 | AI Formatting | Limited daily words | Unlimited |
-| Vision | Not available | 200/day |
-
-View your current usage in **Settings → AI Formatting → Usage**.
+| Vision | Not available | Available |
 
 ---
 
@@ -120,7 +93,7 @@ View your current usage in **Settings → AI Formatting → Usage**.
 
 <CardGroup cols={2}>
   <Card title="Formatting Modes" icon="palette" href="/customization/formatting-modes">
-    Customize formatting per app.
+    Customize formatting and instructions per app.
   </Card>
   <Card title="AI Formatting Feature" icon="wand-magic-sparkles" href="/features/ai-formatting">
     How AI formatting works.
