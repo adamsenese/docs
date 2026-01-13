@@ -72,13 +72,13 @@
               {
                 "group": "Trigger Types",
                 "pages": [
-                  "triggers/types/text-expansion",
+                  "triggers/types/snippets",
                   "triggers/types/web-search",
                   "triggers/types/app-launcher",
                   "triggers/types/window-layout",
                   "triggers/types/keyboard-shortcuts",
                   "triggers/types/terminal",
-                  "triggers/types/siri-shortcuts",
+                  "triggers/types/apple-shortcuts",
                   "triggers/types/ai-calls",
                   "triggers/types/text-formatting"
                 ]

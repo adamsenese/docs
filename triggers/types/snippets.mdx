@@ -1,11 +1,11 @@
 ---
-title: "Text Expansion"
+title: "Snippets"
 description: "Replace trigger phrases with predefined text."
 ---
 
 ## What it does
 
-Text Expansion replaces your trigger phrase with predefined text. It's the simplest trigger type — say a short phrase, get a longer text.
+Snippets replace your trigger phrase with predefined text. It's the simplest trigger type — say a short phrase, get a longer text.
 
 ## Configuration
 
@@ -22,15 +22,14 @@ Text Expansion replaces your trigger phrase with predefined text. It's the simpl
 | "my phone" | (555) 123-4567 |
 | "regards" | Best regards, John Smith |
 | "meeting link" | https://zoom.us/j/123456789 |
-| "standup update" | Yesterday: ... Today: ... Blockers: ... |
 
 ---
 
-## Creating a text expansion trigger
+## Creating a snippet
 
 <Steps>
   <Step title="Open Triggers">
-    Go to **Settings → Triggers**.
+    Go to **Triggers** in Hermes.
   </Step>
   <Step title="Create new trigger">
     Click **+** or **New Trigger**.
@@ -41,8 +40,8 @@ Text Expansion replaces your trigger phrase with predefined text. It's the simpl
   <Step title="Choose matching mode">
     Select **Exact** for simple replacements.
   </Step>
-  <Step title="Select Text Expansion">
-    Choose **Text Expansion** as the action type.
+  <Step title="Select Snippets">
+    Choose **Snippets** as the action type.
   </Step>
   <Step title="Enter output text">
     Type the text you want inserted.
@@ -73,8 +72,7 @@ Best regards,
 
 John Smith
 Senior Developer
-Acme Corporation
-john@acme.com | (555) 123-4567
+john@acme.com
 ```
 
 ---
@@ -107,7 +105,7 @@ Meeting notes, status updates, report formats.
 
 <CardGroup cols={2}>
   <Card title="Variables" icon="code" href="/triggers/variables">
-    Add dynamic content to expansions.
+    Add dynamic content to snippets.
   </Card>
   <Card title="AI Calls" icon="robot" href="/triggers/types/ai-calls">
     Generate dynamic text with AI.
