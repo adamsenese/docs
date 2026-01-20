@@ -7,7 +7,7 @@
     "light": "#BEFF00",
     "dark": "#387961"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "navigation": {
     "global": {
       "anchors": [
@@ -110,7 +110,8 @@
   },
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "https://hermesvoice.com"
   },
   "navbar": {
     "links": [
