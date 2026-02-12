@@ -1,0 +1,74 @@
+---
+title: "Vibecode Settings"
+description: "Configure Vibecode Mode tracking, alerts, and auto-pause video."
+---
+
+## Vibecode Mode
+
+Vibecode Mode tracks AI responses in supported coding apps and shows status pills in the Hermes bar.
+
+Enable it in **Settings -> Vibecode**.
+
+---
+
+## Settings
+
+| Setting | Default | Description |
+|---------|---------|-------------|
+| **Enable Vibecode Mode** | Off | Show the tracking button in the Hermes bar |
+| **Show idle tracking pill** | On | Display a pill even when tracking is idle (when off, it appears on hover) |
+| **Play sound on completion** | On | Play a sound when an AI response finishes |
+| **Auto-redirect on completion** | Off | Automatically switch back to the tracked app when a response finishes |
+| **Auto-pause video** | Off | Pause browser videos when you focus your coding app |
+
+---
+
+## Auto-pause video
+
+Auto-pause video keeps your focus tight while you code. When you switch into a supported app, Hermes pauses browser playback and resumes it when you return.
+
+Auto-pause uses Apple Events to control browser playback. You may need to enable JavaScript from Apple Events:
+
+- **Chrome, Brave, Arc, Edge**: `View -> Developer -> Allow JavaScript from Apple Events`
+- **Safari**: `Develop -> Allow JavaScript from Apple Events`
+
+---
+
+## Supported apps
+
+Vibecode Mode works with native apps:
+
+- **Terminal apps**: iTerm2, Terminal, Warp, Hyper
+- **AI code editors**: Cursor, Windsurf, VS Code with Copilot
+
+Browser-based chatbots are not supported.
+
+---
+
+## How to start tracking
+
+1. Open a supported app
+2. Hover over the Hermes bar and click the eye button
+3. Use your AI assistant - Hermes will show a status pill and notify you when it finishes
+
+---
+
+## Auto-pause video setup
+
+Auto-pause uses Apple Events to control browser playback. You may need to enable JavaScript from Apple Events:
+
+- **Chrome, Brave, Arc, Edge**: `View -> Developer -> Allow JavaScript from Apple Events`
+- **Safari**: `Develop -> Allow JavaScript from Apple Events`
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Vibecode Mode" icon="code" href="/features/vibe-code">
+    Live status pills, file browser, and workflow shortcuts.
+  </Card>
+  <Card title="Default Triggers" icon="bolt" href="/triggers/defaults">
+    Built-in voice commands like "find", "screenshot", and "screen record".
+  </Card>
+</CardGroup>

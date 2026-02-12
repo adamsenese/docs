@@ -42,6 +42,7 @@
             "pages": [
               "features/dictation",
               "features/hotkeys",
+              "features/vibe-code",
               "features/ai-formatting",
               "features/hermes-reply",
               "features/hermes-edit",
@@ -59,6 +60,7 @@
             "group": "Settings",
             "pages": [
               "settings/overview",
+              "settings/vibecode",
               "settings/dictation",
               "settings/ai-formatting",
               "settings/interface",
@@ -79,6 +81,7 @@
                   "triggers/types/app-launcher",
                   "triggers/types/window-layout",
                   "triggers/types/keyboard-shortcuts",
+                  "triggers/types/file-actions",
                   "triggers/types/terminal",
                   "triggers/types/apple-shortcuts",
                   "triggers/types/ai-calls",
@@ -103,6 +106,12 @@
               "troubleshooting/permissions",
               "troubleshooting/audio"
             ]
+          },
+          {
+            "group": "Updates",
+            "pages": [
+              "changelog"
+            ]
           }
         ]
       }
@@ -115,6 +124,10 @@
   },
   "navbar": {
     "links": [
+      {
+        "label": "Changelog",
+        "href": "/changelog"
+      },
       {
         "label": "Support",
         "href": "https://hermesvoice.com/support"
