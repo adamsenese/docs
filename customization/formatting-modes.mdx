@@ -34,6 +34,21 @@ Modes work with web apps too. When you're in a browser, Hermes detects the websi
 
 ---
 
+## Formatting styles
+
+Each mode has a **formatting style** that controls how aggressively Hermes formats your speech:
+
+| Style | Behavior |
+|-------|----------|
+| **Casual** | Minimal corrections — slang preserved, no periods, contractions encouraged |
+| **Semi-Casual** | Fix errors and spelling, keep contractions and natural tone |
+| **Formal** | Full grammar, expand contractions, professional polish |
+| **Custom** | Your own rules via custom instructions |
+
+You can set a style when creating or editing a mode. If you choose **Custom**, your custom instructions define the formatting behavior entirely.
+
+---
+
 ## Creating a custom mode
 
 <Steps>
@@ -51,8 +66,11 @@ Modes work with web apps too. When you're in a browser, Hermes detects the websi
     - For native apps: Select from the app list
     - For web apps: Enter the domain (e.g., `mycompany.slack.com`)
   </Step>
+  <Step title="Choose a formatting style">
+    Pick **Casual**, **Semi-Casual**, **Formal**, or **Custom**.
+  </Step>
   <Step title="Add instructions (optional)">
-    Write specific formatting rules for this mode.
+    Write specific formatting rules for this mode. Required if you chose **Custom** as your style.
   </Step>
 </Steps>
 

@@ -1,0 +1,68 @@
+---
+title: "Note Capture"
+description: "Save notes by voice — say 'note' followed by what you want to remember."
+---
+
+## What it does
+
+The Note Capture trigger saves a note when you say "note" followed by your content. Everything after the trigger phrase becomes the note text.
+
+```
+You say: "note buy groceries after work"
+         └─ trigger ─┘ └──── note content ────┘
+
+Result: A note is saved with "buy groceries after work"
+```
+
+---
+
+## How it works
+
+1. **You speak** — "note remember to call the dentist"
+2. **Hermes transcribes** — Detects the "note" prefix trigger
+3. **Note is saved** — The remainder is captured as a new note
+4. **AI classifies** — The note is automatically organized into the right section
+
+---
+
+## Default trigger
+
+| Trigger Phrase | Matching Mode | Action |
+|----------------|---------------|--------|
+| "note" | Prefix | Save everything after "note" as a new note |
+
+This trigger is included in the default trigger set. Enable it from **Settings -> Triggers -> Setup Defaults**.
+
+---
+
+## Configuration
+
+When creating or editing a Note Capture trigger, you can configure:
+
+| Option | Description |
+|--------|-------------|
+| **Destination** | Where to save the note (Hermes Notes) |
+| **Confirmation** | Whether to show a confirmation before saving |
+
+---
+
+## Examples
+
+| You say | Note saved |
+|---------|------------|
+| "note buy groceries" | buy groceries |
+| "note meeting at 3pm tomorrow" | meeting at 3pm tomorrow |
+| "note great idea for the project" | great idea for the project |
+
+---
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Notes" icon="note-sticky" href="/features/notes">
+    How notes work in Hermes.
+  </Card>
+  <Card title="Creating Triggers" icon="plus" href="/triggers/creating-triggers">
+    Build your own triggers.
+  </Card>
+</CardGroup>

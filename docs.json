@@ -85,7 +85,8 @@
                   "triggers/types/terminal",
                   "triggers/types/apple-shortcuts",
                   "triggers/types/ai-calls",
-                  "triggers/types/text-formatting"
+                  "triggers/types/text-formatting",
+                  "triggers/types/note-capture"
                 ]
               },
               "triggers/variables",

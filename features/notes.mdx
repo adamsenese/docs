@@ -1,83 +1,57 @@
 ---
 title: "Notes"
-description: "Save, organize, and manage your dictation sessions."
+description: "Quickly dictate notes and organize them with smart sections, reminders, and AI classification."
 ---
 
-## What are Notes?
+## Sections
 
-Notes let you save dictations for later reference. Instead of inserting text directly into an app, you can capture it as a note—useful for ideas, meeting notes, or drafts you want to refine.
+Sections let you organize notes into groups like "Work", "Personal", or "Ideas".
 
-## Saving a dictation as a note
+When you save a note, Hermes automatically suggests which section it belongs to based on its content. You can accept the suggestion, choose a different section, or leave it uncategorized.
 
-After dictating, you can save the result as a note instead of (or in addition to) inserting it:
-
-1. **Dictate** as usual
-2. **Choose "Save as Note"** from the Hermes bar or menu
-3. **The note is saved** to your Notes collection
-
-You can also configure triggers to automatically save dictations as notes.
+Manage sections from the **section management** button in the Notes view — create, rename, reorder, or delete them. Use the **filter bar** to show only notes from a specific section.
 
 ---
 
-## Viewing your notes
+## Reminders
 
-1. Open Hermes
-2. Go to the **Notes** section in the sidebar
-3. Browse your saved notes
-
-Notes are displayed with:
-- The content of your dictation
-- When it was created
-- The app you were in (if applicable)
-
----
-
-## Managing notes
-
-### Editing a note
-
-1. Click on a note to open it
-2. Make your changes
-3. Changes save automatically
-
-### Deleting a note
-
-1. Select the note
-2. Click **Delete** or press the delete key
-3. Confirm deletion
-
-### Searching notes
-
-Use the search bar in the Notes section to find notes by content. Hermes searches the full text of all your notes.
-
----
-
-## Dictation history vs. Notes
-
-| Dictation History | Notes |
-|-------------------|-------|
-| Automatic — every dictation is logged | Manual — you choose what to save |
-| Quick reference for recent dictations | Long-term storage for important content |
-
-Think of history as a log, and notes as a collection of things you want to keep.
-
----
-
-## Syncing notes
-
-If Cloud Sync is enabled, your notes sync across all your devices. Create a note on your Mac, and it appears on your other devices signed into the same account.
+Set a reminder on any note and Hermes schedules a macOS notification at the time you choose.
 
 <Note>
-Notes sync is disabled when Privacy Mode is on.
+Hermes needs the **Reminders** permission to schedule notifications. See [Permissions](/setup/permissions).
 </Note>
+
+---
+
+## Calendar events
+
+Link a note to a calendar event to keep meeting notes, agendas, or follow-ups connected to your schedule.
+
+---
+
+## Duplicate detection
+
+When you save a note with content similar to an existing note, Hermes warns you before creating a duplicate.
+
+---
+
+## Auto-classify
+
+By default, new notes are automatically placed into the right section by AI. To review suggestions before they're applied, turn off **Auto-Classify** in the section management sheet. Notes will still get a suggestion — you just approve it first.
+
+---
+
+## Syncing to other apps
+
+Notes can be synced to **Apple Notes**. Configure the destination when setting up a [Note Capture trigger](/triggers/types/note-capture).
 
 ---
 
 ## Related
 
 <CardGroup cols={2}>
-  <Card title="Dictation" icon="microphone" href="/features/dictation">
-    How voice dictation works.
+  <Card title="Note Capture Trigger" icon="note-sticky" href="/triggers/types/note-capture">
+    Capture notes with a voice command.
   </Card>
   <Card title="Privacy Settings" icon="lock" href="/settings/privacy">
     Control syncing and data retention.
